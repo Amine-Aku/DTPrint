@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">DT.Print</string>
+
+<!--    Drawer Nav Select Menu-->
+    <string name="draw_nav_home">Home</string>
+    <string name="draw_nav_gallery">Gallery</string>
+    <string name="draw_nav_profile">Profile</string>
+    <string name="draw_nav_orders">Orders</string>
+    <string name="draw_nav_wishlist">Wishlist</string>
+    <string name="draw_nav_shipping">Shipping</string>
+    <string name="draw_nav_clients">Clients</string>
+
+
+<!--    /Drawer Nav Toggle Option-->
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+
+<!--    CardView-->
+    <string name="cardView_btn_order">Order</string>
+    <string name="cardView_btn_wishlist">Wishlist</string>
+    <string name="cardView_btn_more">More</string>
+
+
+</resources>
