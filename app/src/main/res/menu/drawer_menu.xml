@@ -28,5 +28,13 @@
             android:id="@+id/draw_nav_clients"
             android:icon="@drawable/ic_clients"
             android:title="@string/draw_nav_clients" />
+        <item
+            android:id="@+id/draw_nav_login"
+            android:icon="@drawable/ic_account_circle"
+            android:title="@string/draw_nav_login" />
+        <item
+            android:id="@+id/draw_nav_signUp"
+            android:icon="@drawable/ic_account_circle"
+            android:title="@string/draw_nav_signUp" />
     </group>
 </menu>

@@ -9,6 +9,8 @@
     <string name="draw_nav_wishlist">Wishlist</string>
     <string name="draw_nav_shipping">Shipping</string>
     <string name="draw_nav_clients">Clients</string>
+    <string name="draw_nav_login">Login</string>
+    <string name="draw_nav_signUp">Sign Up</string>
 
 
 <!--    /Drawer Nav Toggle Option-->
@@ -20,5 +22,10 @@
     <string name="cardView_btn_wishlist">Wishlist</string>
     <string name="cardView_btn_more">More</string>
 
+
+<!--    Toasts-->
+    <string name="signup_add_client">Client Added</string>
+
+    <string name="last_name">Nom</string>
 
 </resources>

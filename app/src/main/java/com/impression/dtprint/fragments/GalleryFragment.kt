@@ -33,6 +33,7 @@ class GalleryFragment() : Fragment(){
          var recyclerView: RecyclerView = view.findViewById(R.id.recycler_view_gallery)
          recyclerView.layoutManager = LinearLayoutManager(activity)
 
+
         recyclerView.adapter = GalleryAdapter(this.activity!!, ListProduits.list)
 
 
