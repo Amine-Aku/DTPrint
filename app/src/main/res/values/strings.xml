@@ -17,10 +17,20 @@
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
 
-<!--    CardView-->
+<!--    CardView Gallery-->
     <string name="cardView_btn_order">Order</string>
     <string name="cardView_btn_wishlist">Wishlist</string>
     <string name="cardView_btn_more">More</string>
+
+
+    <!--    CardView Item-->
+    <string name="cardView_address">City + Address</string>
+    <string name="full_name">ListName + First Name</string>
+    <string name="phone_num">Phone Number</string>
+    <string name="username">Username</string>
+
+<!--    Search Bar-->
+    <string name="search_hint">Search</string>
 
 
 <!--    Toasts-->
