@@ -14,6 +14,9 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.firestore.FirebaseFirestore
+import com.impression.dtprint.dao.DocumentsController
+import com.impression.dtprint.dao.GoodiesController
 import com.impression.dtprint.fragments.*
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,6 +26,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     var drawer: DrawerLayout? = null
     var toolbar: Toolbar? = null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,6 +59,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .replace(R.id.fragment_container, HomeFragment()).commit()
             navigationView.setCheckedItem(R.id.draw_nav_home)
         }
+
 
 
     }

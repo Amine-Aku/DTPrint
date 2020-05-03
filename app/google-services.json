@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "718434435285",
+    "firebase_url": "https://dtprint-5c1da.firebaseio.com",
+    "project_id": "dtprint-5c1da",
+    "storage_bucket": "dtprint-5c1da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718434435285:android:45102944de0f8ba604e25c",
+        "android_client_info": {
+          "package_name": "com.impression.dtprint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718434435285-9ia4gj0mh1i6jhisppv24qnpgdpvmc23.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.impression.dtprint",
+            "certificate_hash": "64a1bc9277b823ed59ea3bc520203737659ca087"
+          }
+        },
+        {
+          "client_id": "718434435285-6g90alebhcmr33diat7v3vst28h4pke2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI4gRN9j2nsHRkQVoEWu9--cO9dJ5VhsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718434435285-6g90alebhcmr33diat7v3vst28h4pke2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

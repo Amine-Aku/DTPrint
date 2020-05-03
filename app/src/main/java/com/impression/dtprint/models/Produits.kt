@@ -1,6 +1,6 @@
 package com.impression.dtprint.models
 
-open class Produits() {
+public open class Produits() {
 
     var id:Long
     var nom: String = ""
@@ -16,13 +16,19 @@ open class Produits() {
     }
 
     constructor(id:Long = 0, nom:String = "", prix:Float = 0f): this(){
+        this.id = id
         this.nom = nom
         this.prix = prix
     }
 
+    override fun toString(): String {
+        return "Produits(id=$id, nom='$nom', prix=$prix)"
+    }
+
+
 }
 
 object ListProduits{
-    var list: List<Produits> = ListDocuments.list + ListGoodies._list
+    var list: List<Produits> = ListDocuments.list + ListGoodies.list
 }
 
