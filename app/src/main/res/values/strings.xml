@@ -11,6 +11,8 @@
     <string name="draw_nav_clients">Clients</string>
     <string name="draw_nav_login">Login</string>
     <string name="draw_nav_signUp">Sign Up</string>
+    <string name="login">Login</string>
+    <string name="logout">Log Out</string>
 
 
     <!--    /Drawer Nav Toggle Option-->
@@ -27,17 +29,19 @@
     <string name="cardView_address">City + Address</string>
     <string name="full_name">ListName + First Name</string>
 
+    <string name="product_name">Product Name</string>
+    <string name="price">Price</string>
 
-<!--    SignUp-->
+
+    <!--    SignUp-->
     <string name="last_name">Last Name</string>
     <string name="first_name">First Name</string>
     <string name="phone_num">Phone Number</string>
     <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="city">City</string>
-    <string name="RIB">Credit Card Number</string>
+    <string name="credit_card">Credit Card</string>
     <string name="address">Address</string>
-
 
 
     <string name="password">Password</string>
@@ -48,6 +52,10 @@
 
     <!--    Toasts-->
     <string name="signup_add_client">Client Added</string>
+
+<!--    Titles-->
+    <string name="your_orders">Your orders</string>
+    <string name="your_wishlist">Your Wish list</string>
 
 
 

@@ -16,25 +16,36 @@
             android:id="@+id/draw_nav_profile"
             android:icon="@drawable/ic_profile"
             android:title="@string/draw_nav_profile" />
-        <item
-            android:id="@+id/draw_nav_orders"
-            android:icon="@drawable/ic_orders"
-            android:title="@string/draw_nav_orders" />
-        <item
-            android:id="@+id/draw_nav_wishlist"
-            android:icon="@drawable/ic_wishlist"
-            android:title="@string/draw_nav_wishlist" />
-        <item
-            android:id="@+id/draw_nav_clients"
-            android:icon="@drawable/ic_clients"
-            android:title="@string/draw_nav_clients" />
-        <item
-            android:id="@+id/draw_nav_login"
-            android:icon="@drawable/ic_account_circle"
-            android:title="@string/draw_nav_login" />
-        <item
-            android:id="@+id/draw_nav_signUp"
-            android:icon="@drawable/ic_account_circle"
-            android:title="@string/draw_nav_signUp" />
+        <!--        <item-->
+        <!--            android:id="@+id/draw_nav_login"-->
+        <!--            android:icon="@drawable/ic_account_circle"-->
+        <!--            android:title="@string/draw_nav_login" />-->
+        <!--        <item-->
+        <!--            android:id="@+id/draw_nav_signUp"-->
+        <!--            android:icon="@drawable/ic_account_circle"-->
+        <!--            android:title="@string/draw_nav_signUp" />-->
     </group>
+
+    <item android:title="Orders"
+        android:id="@+id/drawer_btns">
+        <menu>
+            <item
+                android:id="@+id/draw_nav_orders"
+                android:icon="@drawable/ic_orders"
+                android:title="@string/draw_nav_orders" />
+            <item
+                android:id="@+id/draw_nav_wishlist"
+                android:icon="@drawable/ic_wishlist"
+                android:title="@string/draw_nav_wishlist" />
+            <item
+                android:id="@+id/draw_nav_logout"
+                android:icon="@drawable/ic_logout_red"
+                android:title="@string/logout" />
+            <item
+                android:id="@+id/draw_nav_clients"
+                android:icon="@drawable/ic_clients"
+                android:title="@string/draw_nav_clients" />
+        </menu>
+    </item>
+
 </menu>

@@ -6,14 +6,14 @@ import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabItem
 import com.google.android.material.tabs.TabLayout
-import com.impression.dtprint.Adapters.PageAdapter
+import com.impression.dtprint.Adapters.LoginTabAdapter
 
 class LoginActivity : AppCompatActivity() {
 
     private var tabLayout: TabLayout? = null
     private var loginTab: TabItem? = null
     private var signUpTab: TabItem? = null
-    private var viewPager: ViewPager? = null
+     var viewPager: ViewPager? = null
 
     var pageAdapter: PagerAdapter? = null
 
@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
         signUpTab = findViewById(R.id.tab_signup)
         viewPager = findViewById(R.id.view_pager_login)
 
-        pageAdapter = PageAdapter(supportFragmentManager, tabLayout!!.tabCount)
+        pageAdapter = LoginTabAdapter(supportFragmentManager, tabLayout!!.tabCount)
         viewPager!!.adapter = pageAdapter
 
         tabLayout!!.setOnTabSelectedListener( object: TabLayout.OnTabSelectedListener{

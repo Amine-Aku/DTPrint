@@ -14,7 +14,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/order_product_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -24,9 +24,9 @@
 
         <!--        START-->
 
-        <!--Nom-->
+        <!--Product Name-->
         <LinearLayout
-            android:id="@+id/profile_layout_nom"
+            android:id="@+id/order_layout_product_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -39,12 +39,12 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="5dp"
-                android:text="@string/last_name"
+                android:text="@string/product_name"
                 android:textColor="@color/colorAccentLight"
                 android:textSize="22sp" />
 
             <TextView
-                android:id="@+id/profile_input_nom"
+                android:id="@+id/order_view_product_image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
@@ -52,9 +52,9 @@
                 android:textSize="22sp"
                 />
         </LinearLayout>
-        <!--Prenom-->
+        <!--  Price-->
         <LinearLayout
-            android:id="@+id/profile_layout_prenom"
+            android:id="@+id/order_layout_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -68,18 +68,20 @@
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="5dp"
                 android:backgroundTint="@color/colorAccentLight"
-                android:text="@string/first_name"
+                android:text="@string/price"
                 android:textColor="@color/colorAccentLight"
                 android:textSize="22sp" />
 
             <TextView
-                android:id="@+id/profile_input_prenom"
+                android:id="@+id/order_view_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="22sp" />
         </LinearLayout>
+
+///////////////////////////// SET IDs below + Edit Text + Btn order
         <!--Username-->
         <LinearLayout
             android:id="@+id/profile_layout_username"
@@ -210,7 +212,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="22sp" />
         </LinearLayout>
-<!--        Credit Card-->
+        <!--        Credit Card-->
         <LinearLayout
             android:id="@+id/profile_layout_creditCard"
             android:layout_width="match_parent"

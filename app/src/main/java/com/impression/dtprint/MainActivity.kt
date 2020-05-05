@@ -18,6 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.impression.dtprint.dao.DocumentsController
 import com.impression.dtprint.dao.GoodiesController
 import com.impression.dtprint.fragments.*
+import com.impression.dtprint.models.CurrentClient
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_signup.*
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     var drawer: DrawerLayout? = null
     var toolbar: Toolbar? = null
+    var navigationView: NavigationView? = null
 
 
 
@@ -33,7 +35,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_account_circle)
 
 
         //Set Toolbar as the Action Bar
@@ -42,8 +43,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         //Set The Drawer
         drawer = findViewById(R.id.main_layout)
-        var navigationView: NavigationView = findViewById(R.id.draw_nav_view)
-        navigationView.setNavigationItemSelectedListener(this)
+        navigationView = findViewById(R.id.draw_nav_view)
+        navigationView!!.setNavigationItemSelectedListener(this)
 
         var toggle = ActionBarDrawerToggle(
             this, drawer, toolbar,
@@ -57,64 +58,79 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, HomeFragment()).commit()
-            navigationView.setCheckedItem(R.id.draw_nav_home)
+            navigationView!!.setCheckedItem(R.id.draw_nav_home)
         }
 
 
+        if(!CurrentClient.loggedIn){
+            navigationView!!.menu.removeItem(R.id.draw_nav_profile)
+            navigationView!!.menu.removeItem(R.id.drawer_btns)
+        }
 
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.draw_nav_home -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, HomeFragment()).commit()
-                toolbar!!.title =  resources.getString(R.string.app_name)
-            }
+        if(CurrentClient.loggedIn){
+            when (item.itemId) {
+                R.id.draw_nav_home -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, HomeFragment()).commit()
+                    toolbar!!.title =  resources.getString(R.string.app_name)
+                }
 
-            R.id.draw_nav_gallery -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, GalleryFragment()).commit()
-                toolbar!!.title = resources.getString(R.string.draw_nav_gallery)
-            }
+                R.id.draw_nav_gallery -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, GalleryFragment()).commit()
+                    toolbar!!.title = resources.getString(R.string.draw_nav_gallery)
+                }
 
-            R.id.draw_nav_profile -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, ProfileFragment()).commit()
-                toolbar!!.title = resources.getString(R.string.draw_nav_profile)
-            }
+                R.id.draw_nav_profile -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, ProfileFragment()).commit()
+                    toolbar!!.title = resources.getString(R.string.draw_nav_profile)
+                }
 
-            R.id.draw_nav_orders -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, OrdersFragment()).commit()
-                toolbar!!.title = resources.getString(R.string.draw_nav_orders)
-            }
+                R.id.draw_nav_orders -> {
+                    startActivity(Intent(this, OrdersActivity::class.java))
+                }
 
-            R.id.draw_nav_wishlist -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, WishlistFragment()).commit()
-                toolbar!!.title = resources.getString(R.string.draw_nav_wishlist)
-            }
+                R.id.draw_nav_wishlist -> {
+                    startActivity(Intent(this, WishlistActivity::class.java))
+                }
 
-            R.id.draw_nav_clients -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, ClientsFragment()).commit()
-                toolbar!!.title = resources.getString(R.string.draw_nav_clients)
-            }
+                R.id.draw_nav_logout -> {
+                    CurrentClient.logout()
+                    recreate()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, HomeFragment()).commit()
+                    toolbar!!.title =  resources.getString(R.string.app_name)
+                }
 
-            R.id.draw_nav_login -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, LoginFragment()).commit()
-                toolbar!!.title = resources.getString(R.string.draw_nav_login)
-            }
-
-            R.id.draw_nav_signUp -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, SignUpFragment()).commit()
-                toolbar!!.title = resources.getString(R.string.draw_nav_signUp)
-
+                R.id.draw_nav_clients -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, ClientsFragment()).commit()
+                    toolbar!!.title = resources.getString(R.string.draw_nav_clients)
+                }
             }
         }
+        else{
+            when (item.itemId) {
+                R.id.draw_nav_home -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, HomeFragment()).commit()
+                    toolbar!!.title =  resources.getString(R.string.app_name)
+                }
+
+                R.id.draw_nav_gallery -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, GalleryFragment()).commit()
+                    toolbar!!.title = resources.getString(R.string.draw_nav_gallery)
+                }
+            }
+        }
+
+
+
         drawer!!.closeDrawer(GravityCompat.START)
         return true
     }
@@ -131,7 +147,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
+        if(!CurrentClient.loggedIn) menuInflater.inflate(R.menu.main_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 

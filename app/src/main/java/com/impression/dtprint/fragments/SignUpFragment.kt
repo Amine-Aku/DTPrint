@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.impression.dtprint.LoginActivity
 import com.impression.dtprint.R
 import com.impression.dtprint.dao.ClientController
 import com.impression.dtprint.models.Client
@@ -40,6 +41,8 @@ class SignUpFragment : Fragment() {
                     emailField.text.toString()
                 )
             )
+//            val pager = LoginActivity()
+//            pager.viewPager!!.currentItem = 0
             Toast.makeText(activity, "Client Added", Toast.LENGTH_LONG).show()
         }
 

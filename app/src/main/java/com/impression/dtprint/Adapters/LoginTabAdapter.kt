@@ -7,7 +7,7 @@ import androidx.viewpager.widget.PagerAdapter
 import com.impression.dtprint.fragments.LoginFragment
 import com.impression.dtprint.fragments.SignUpFragment
 
-class PageAdapter(var fragmentManager: FragmentManager, private var numOfTabs:Int)
+class LoginTabAdapter(var fragmentManager: FragmentManager, private var numOfTabs:Int)
     : FragmentPagerAdapter(fragmentManager, numOfTabs) {
 
 

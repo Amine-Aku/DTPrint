@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -18,10 +19,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"
+        <activity
+            android:name=".LoginActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".WishlistActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".OrdersActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".OrderActivity"
             android:parentActivityName=".MainActivity"/>
-        <activity android:name=".TestActivity" />
 
+        <activity android:name=".TestActivity" />
     </application>
 
 </manifest>
