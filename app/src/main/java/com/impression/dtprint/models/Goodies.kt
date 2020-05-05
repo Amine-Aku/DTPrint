@@ -2,7 +2,7 @@ package com.impression.dtprint.models
 
 
 public class Goodies : Produits {
-    var type: String? = null
+    var goodieType: String? = null
     var stock: Int = 0
     var description: String = ""
 
@@ -11,9 +11,9 @@ public class Goodies : Produits {
     }
     constructor():super(){}
 
-    constructor(id: Long, nom: String, prix: Float, type: String, stock: Int = 0, description: String = "")
-            : super(id, nom, prix)  {
-        this.type = type
+    constructor(id: Long, nom: String, prix: Float, type: String, goodieType: String, stock: Int = 0, description: String = "")
+            : super(id, nom, prix, type)  {
+        this.goodieType = goodieType
         this.stock = stock
         this.description = description
     }
@@ -30,12 +30,12 @@ public class Goodies : Produits {
 
 object ListGoodies {
     val list = listOf<Goodies>(
-        Goodies(10,"T Shirt", 50f, Goodies.GoodiesType.T_Shirt.toString()),
-        Goodies(11,"Mug", 20f, Goodies.GoodiesType.Mug.toString()),
-        Goodies(12,"Stylo", 10f, Goodies.GoodiesType.Stylo.toString()),
-        Goodies(13,"Rollup", 100f, Goodies.GoodiesType.Rollup.toString()),
-        Goodies(14,"Bandrole", 150f, Goodies.GoodiesType.Banderole.toString()),
-        Goodies(15,"Stickers", 5f, Goodies.GoodiesType.Stickers.toString())
+        Goodies(20,"T Shirt", 50f, Produits.Type.Goodie.toString(), Goodies.GoodiesType.T_Shirt.toString()),
+        Goodies(21,"Mug", 20f, Produits.Type.Goodie.toString(), Goodies.GoodiesType.Mug.toString()),
+        Goodies(22,"Stylo", 10f, Produits.Type.Goodie.toString(), Goodies.GoodiesType.Stylo.toString()),
+        Goodies(23,"Rollup", 100f, Produits.Type.Goodie.toString(), Goodies.GoodiesType.Rollup.toString()),
+        Goodies(24,"Bandrole", 150f, Produits.Type.Goodie.toString(), Goodies.GoodiesType.Banderole.toString()),
+        Goodies(25,"Stickers", 5f, Produits.Type.Goodie.toString(), Goodies.GoodiesType.Stickers.toString())
     )
 }
 

@@ -5,10 +5,10 @@ import io.realm.annotations.PrimaryKey
 import io.realm.annotations.RealmClass
 import models.User.UserType
 
-@RealmClass
-open class Client() : RealmObject(){
 
-    @PrimaryKey
+open class Client(){
+
+
     var id: Long =0
     var userName:String ?= ""
     var password:String ?=""
@@ -52,6 +52,7 @@ open class Client() : RealmObject(){
         this.ville=ville
         this.adresse=adresse
         this.email=email
+        this.numCarteBancaire = RIB
     }
 
 //    constructor(id: Long, name: String, userPassword: String, nom: String, prenom: String, ville: String, adresse: String, email: String) : super(id, name, userPassword) {

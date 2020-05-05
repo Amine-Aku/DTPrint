@@ -5,6 +5,7 @@ public open class Produits() {
     var id:Long
     var nom: String = ""
     var prix: Float = 0f
+    var type: String =""
 
     init {
         id = 0
@@ -15,15 +16,21 @@ public open class Produits() {
         this.id = id
     }
 
-    constructor(id:Long = 0, nom:String = "", prix:Float = 0f): this(){
+    constructor(id:Long = 0, nom:String = "", prix:Float = 0f,type:String): this(){
         this.id = id
         this.nom = nom
         this.prix = prix
+        this.type = type
     }
 
     override fun toString(): String {
-        return "Produits(id=$id, nom='$nom', prix=$prix)"
+        return "Produits(id=$id, nom='$nom', prix=$prix, type='$type')"
     }
+
+    enum class Type{
+        Document,Goodie
+    }
+
 
 
 }

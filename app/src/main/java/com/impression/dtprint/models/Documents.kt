@@ -1,5 +1,7 @@
 package com.impression.dtprint.models
 
+import models.User
+
 public class Documents : Produits {
 
     var format: String = DocFormat.A4.toString()
@@ -7,8 +9,8 @@ public class Documents : Produits {
 
     constructor():super(){}
 
-     constructor(id: Long, nom: String, prix: Float, format: String = DocFormat.A4.toString(), doubleFaces: Boolean = false)
-            : super(id, nom, prix) {
+     constructor(id: Long, nom: String, prix: Float, type:String, format: String = DocFormat.A4.toString(), doubleFaces: Boolean = false)
+            : super(id, nom, prix, type) {
         this.format = format
         this.doubleFaces = doubleFaces
     }
@@ -30,12 +32,12 @@ public class Documents : Produits {
 
 object ListDocuments {
     val list = listOf<Documents>(
-        Documents(0,"Doc Format A0", 5f, Documents.DocFormat.A0.toString()),
-        Documents(1,"Doc Format A1", 3f, Documents.DocFormat.A1.toString()),
-        Documents(2,"Doc Format A2", 2f, Documents.DocFormat.A2.toString()),
-        Documents(3,"Doc Format A3", 1f, Documents.DocFormat.A3.toString()),
-        Documents(4,"Doc Format A4", 0.5f, Documents.DocFormat.A4.toString()),
-        Documents(5,"Doc Format A5", 0.5f, Documents.DocFormat.A5.toString())
+        Documents(10,"Doc Format A0", 5f, Produits.Type.Document.toString(),Documents.DocFormat.A0.toString()),
+        Documents(11,"Doc Format A1", 3f, Produits.Type.Document.toString(), Documents.DocFormat.A1.toString()),
+        Documents(12,"Doc Format A2", 2f, Produits.Type.Document.toString(), Documents.DocFormat.A2.toString()),
+        Documents(13,"Doc Format A3", 1f, Produits.Type.Document.toString(), Documents.DocFormat.A3.toString()),
+        Documents(14,"Doc Format A4", 0.5f, Produits.Type.Document.toString(), Documents.DocFormat.A4.toString()),
+        Documents(15,"Doc Format A5", 0.5f, Produits.Type.Document.toString(), Documents.DocFormat.A5.toString())
     )
 }
 

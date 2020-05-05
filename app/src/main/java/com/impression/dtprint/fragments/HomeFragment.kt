@@ -1,17 +1,21 @@
 package com.impression.dtprint.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.impression.dtprint.R
+import com.impression.dtprint.TestActivity
 import com.impression.dtprint.dao.ConnectionDB
 import com.impression.dtprint.dao.DocumentsController
 import com.impression.dtprint.models.Documents
+import com.impression.dtprint.models.Produits
 
 class HomeFragment : Fragment() {
 
@@ -23,6 +27,10 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         text_area = view.findViewById<TextView>(R.id.home_area)
+        ConnectionDB.db.collection("Produits").document("20").get()
+            .addOnSuccessListener {
+                text_area!!.text = it.toObject(Produits::class.java)!!.nom
+            }
 
 //        DocumentsController.getAll(activity!!, object:DocumentsController.FirestoreCallback{
 //            override fun onCallback(text: String) {
@@ -30,7 +38,10 @@ class HomeFragment : Fragment() {
 //                Toast.makeText(context,"Doc Loaded"  , Toast.LENGTH_SHORT).show()
 //            }
 //        })
-
+        val btn = view.findViewById<Button>(R.id.recycler_btn)
+        btn.setOnClickListener {
+            startActivity(Intent(context, TestActivity::class.java))
+        }
 
 
 

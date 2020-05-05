@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">DT.Print</string>
 
-<!--    Drawer Nav Select Menu-->
+    <!--    Drawer Nav Select Menu-->
     <string name="draw_nav_home">Home</string>
     <string name="draw_nav_gallery">Gallery</string>
     <string name="draw_nav_profile">Profile</string>
@@ -13,11 +13,11 @@
     <string name="draw_nav_signUp">Sign Up</string>
 
 
-<!--    /Drawer Nav Toggle Option-->
+    <!--    /Drawer Nav Toggle Option-->
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close Navigation Drawer</string>
 
-<!--    CardView Gallery-->
+    <!--    CardView Gallery-->
     <string name="cardView_btn_order">Order</string>
     <string name="cardView_btn_wishlist">Wishlist</string>
     <string name="cardView_btn_more">More</string>
@@ -26,16 +26,29 @@
     <!--    CardView Item-->
     <string name="cardView_address">City + Address</string>
     <string name="full_name">ListName + First Name</string>
+
+
+<!--    SignUp-->
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
     <string name="phone_num">Phone Number</string>
     <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="city">City</string>
+    <string name="RIB">Credit Card Number</string>
+    <string name="address">Address</string>
 
-<!--    Search Bar-->
+
+
+    <string name="password">Password</string>
+
+    <!--    Search Bar-->
     <string name="search_hint">Search</string>
 
 
-<!--    Toasts-->
+    <!--    Toasts-->
     <string name="signup_add_client">Client Added</string>
 
-    <string name="last_name">Nom</string>
+
 
 </resources>

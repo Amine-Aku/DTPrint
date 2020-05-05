@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="5dp"
-    android:layout_marginTop="5dp"
     android:layout_marginRight="5dp"
+    android:layout_marginBottom="5dp"
     card_view:cardCornerRadius="8dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg"
+        android:background="@color/icons_text"
         android:baselineAligned="false"
         android:orientation="horizontal"
         android:padding="5dp">
@@ -48,19 +48,18 @@
                 android:orientation="horizontal">
 
 
-                    <TextView
-                        android:id="@+id/prix_produit_gallery"
-                        android:layout_width="170dp"
-                        android:layout_height="match_parent"
-                        android:layout_margin="4dp"
-                        android:layout_weight="1"
-                        android:gravity="fill"
-                        android:text="Prix"
-                        android:textAlignment="gravity"
-                        android:textColor="@color/colorAccent"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
+                <TextView
+                    android:id="@+id/prix_produit_gallery"
+                    android:layout_width="170dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:gravity="fill"
+                    android:text="Prix"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
 
                 <Button
@@ -70,10 +69,10 @@
                     android:layout_gravity="center"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
+                    android:autoSizeMaxTextSize="20sp"
                     android:background="@color/colorAccentLight"
                     android:text="@string/cardView_btn_order"
                     android:textColor="@android:color/white"
-                    android:autoSizeMaxTextSize="20sp"
                     android:textStyle="bold" />
 
 
@@ -91,8 +90,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:gravity="fill"
                     android:background="@android:color/transparent"
+                    android:gravity="fill"
                     android:text="@string/cardView_btn_more"
                     android:textColor="@color/colorAccentLight"
                     android:textSize="14sp"

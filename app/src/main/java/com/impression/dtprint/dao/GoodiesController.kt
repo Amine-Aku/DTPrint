@@ -8,7 +8,7 @@ import com.impression.dtprint.models.ListGoodies
 object GoodiesController {
 
         private val db = ConnectionDB.db
-        private val collection = db.collection("Goodies")
+        private val collection = db.collection("Produits")
 
         fun addGoodies(){
             ListGoodies.list.forEach{

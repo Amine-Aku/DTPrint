@@ -2,14 +2,17 @@ package com.impression.dtprint.dao
 
 import android.content.Context
 import android.widget.Toast
+import com.google.firebase.firestore.FirebaseFirestore
 import com.impression.dtprint.models.Documents
 import com.impression.dtprint.models.ListDocuments
+import com.impression.dtprint.models.Produits
 
 
 object DocumentsController {
 
+
         private val db = ConnectionDB.db
-        private var collection = db.collection("Documents")
+        private var collection = db.collection("Produits")
 
         fun addDocuments(){
             ListDocuments.list.forEach{
@@ -19,7 +22,7 @@ object DocumentsController {
         }
 
         fun getAll(context: Context, firestoreCallback: FirestoreCallback){
-            var list: List<Documents> = emptyList()
+            var list: List<Produits> = emptyList()
 //            var text:String = "list : \n"
             print("TEST 0")
             collection.get()
@@ -49,7 +52,7 @@ object DocumentsController {
         }
 
     public interface FirestoreCallback{
-                fun onCallback(list:List<Documents>)
+                fun onCallback(list:List<Produits>)
     }
 
 }

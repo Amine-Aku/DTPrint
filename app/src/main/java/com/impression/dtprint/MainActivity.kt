@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Realm.init(this)
+        //supportActionBar!!.setHomeAsUpIndicator(R.drawable.ic_account_circle)
 
 
         //Set Toolbar as the Action Bar
@@ -129,4 +129,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             super.onBackPressed()
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.login_icon -> {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }
