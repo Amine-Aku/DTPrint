@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.impression.dtprint.R
 import com.impression.dtprint.TestActivity
+import com.impression.dtprint.WishlistActivity
 import com.impression.dtprint.dao.ConnectionDB
 import com.impression.dtprint.dao.DocumentsController
 import com.impression.dtprint.models.Documents
@@ -26,55 +27,18 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        text_area = view.findViewById<TextView>(R.id.home_area)
-        ConnectionDB.db.collection("Produits").document("20").get()
-            .addOnSuccessListener {
-                text_area!!.text = it.toObject(Produits::class.java)!!.nom
-            }
 
-//        DocumentsController.getAll(activity!!, object:DocumentsController.FirestoreCallback{
-//            override fun onCallback(text: String) {
-//                text_area!!.text = text
-//                Toast.makeText(context,"Doc Loaded"  , Toast.LENGTH_SHORT).show()
-//            }
-//        })
         val btn = view.findViewById<Button>(R.id.recycler_btn)
         btn.setOnClickListener {
             startActivity(Intent(context, TestActivity::class.java))
         }
-
-
-
+//        val btn2 = view.findViewById<Button>(R.id.recycler_btn2)
+//        btn2.setOnClickListener {
+//            startActivity(Intent(context, WishlistActivity::class.java))
+//        }
 
 
         return view
     }
 
-//    fun getAll(){
-//        var list: List<Documents> = emptyList()
-//        var text:String = "list : \n"
-//        print("TEST 0")
-//        collection.get()
-//            .addOnSuccessListener {
-//
-//                print("TEST 1")
-//                it.forEach {
-//                    val q: Documents = it.toObject(Documents::class.java)
-////                        var newDoc = Documents(q.id, q.nom, q.prix, q.format, q.doubleFaces)
-////                        list += ListDocuments.list.get(0)
-//                    text += "DOC : "+"\n"
-//                    print("TEST 2")
-//                    Toast.makeText(context,"Doc Loaded", Toast.LENGTH_SHORT).show()
-//
-//                }
-//                text_area!!.text = text
-//
-//            }
-//            .addOnFailureListener {
-//                print("Loading Error !")
-//                Toast.makeText(context,"Error !", Toast.LENGTH_SHORT).show()
-//                //print(it.message)
-//            }
-//
-//    }
 }

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryLight">
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
+        android:id="@+id/order_activity_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -37,19 +36,17 @@
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="5dp"
-                android:text="@string/product_name"
+                android:text="@string/product_name_order"
                 android:textColor="@color/colorAccentLight"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/order_view_product_image"
+                android:id="@+id/order_view_product_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="22sp"
+                android:textColor="@color/PrimaryText"
+                android:textSize="20sp"
                 />
         </LinearLayout>
         <!--  Price-->
@@ -68,23 +65,25 @@
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="5dp"
                 android:backgroundTint="@color/colorAccentLight"
-                android:text="@string/price"
+                android:text="@string/price_order"
                 android:textColor="@color/colorAccentLight"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/order_view_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="22sp" />
+                android:textColor="@color/PrimaryText"
+                android:textSize="20sp" />
         </LinearLayout>
 
-///////////////////////////// SET IDs below + Edit Text + Btn order
-        <!--Username-->
+
+<!--  Product  Details-->
+
+        <!--Format -->
         <LinearLayout
-            android:id="@+id/profile_layout_username"
+            android:id="@+id/order_layout_format"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -96,21 +95,21 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="Username"
+                android:text="@string/format"
                 android:textColor="@color/colorAccentLight"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/profile_input_username"
+                android:id="@+id/order_view_format"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="22sp" />
+                android:textColor="@color/PrimaryText"
+                android:textSize="20sp" />
         </LinearLayout>
-        <!--Email-->
+        <!--DoubleFace-->
         <LinearLayout
-            android:id="@+id/profile_layout_email"
+            android:id="@+id/order_layout_doubleFace"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -122,21 +121,22 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="Email"
+                android:text="@string/doubleface"
                 android:textColor="@color/colorAccentLight"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/profile_input_email"
+
+            <CheckBox
+                android:id="@+id/order_checkBox_doubleFace"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="22sp" />
+                android:textColor="@color/PrimaryText"
+                android:textSize="20sp" />
         </LinearLayout>
-        <!--Password-->
+        <!--Type-->
         <LinearLayout
-            android:id="@+id/profile_layout_password"
+            android:id="@+id/order_layout_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -148,21 +148,21 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="@string/password"
+                android:text="@string/goodie_type"
                 android:textColor="@color/colorAccentLight"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/profile_input_password"
+                android:id="@+id/order_view_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="22sp" />
+                android:textColor="@color/PrimaryText"
+                android:textSize="20sp" />
         </LinearLayout>
-        <!--Ville-->
+        <!--Stock-->
         <LinearLayout
-            android:id="@+id/profile_layout_ville"
+            android:id="@+id/order_layout_stock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -174,21 +174,21 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="@string/city"
+                android:text="@string/stock"
                 android:textColor="@color/colorAccentLight"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/profile_input_ville"
+                android:id="@+id/order_view_stock"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="22sp" />
+                android:textColor="@color/PrimaryText"
+                android:textSize="20sp" />
         </LinearLayout>
-        <!--Address-->
+        <!--Description-->
         <LinearLayout
-            android:id="@+id/profile_layout_adresse"
+            android:id="@+id/order_layout_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -200,21 +200,22 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="@string/address"
+                android:text="@string/description"
                 android:textColor="@color/colorAccentLight"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/profile_input_adresse"
+                android:id="@+id/order_view_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="22sp" />
+                android:textColor="@color/PrimaryText"
+                android:textSize="20sp" />
         </LinearLayout>
-        <!--        Credit Card-->
+
+<!--    qtt -->
         <LinearLayout
-            android:id="@+id/profile_layout_creditCard"
+            android:id="@+id/order_layout_qtt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -226,19 +227,92 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="@string/credit_card"
+                android:text="@string/qtt"
+                android:textColor="@color/colorAccentLight"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/order_numPicker_qtt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!--@ de Livraison-->
+        <LinearLayout
+            android:id="@+id/order_layout_shipping_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/shipping_address"
+                android:textColor="@color/colorAccentLight"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/order_view_shipping_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
+
+        <!--Prix Total-->
+        <LinearLayout
+            android:id="@+id/order_layout_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/total"
+                android:textStyle="bold"
+                android:layout_gravity="center"
                 android:textColor="@color/colorAccentLight"
                 android:textSize="22sp" />
 
             <TextView
-                android:id="@+id/profile_input_credit_card"
+                android:id="@+id/order_view_total"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="22sp" />
+                android:textSize="20sp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
+
+        <Button
+            android:id="@+id/order_activity_order_btn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp"
+            android:background="@color/colorAccentLight"
+            android:gravity="center"
+            android:text="@string/cardView_btn_order"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <!--        END-->
     </LinearLayout>

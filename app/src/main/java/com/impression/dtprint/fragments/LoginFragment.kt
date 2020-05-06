@@ -47,9 +47,10 @@ class LoginFragment : Fragment() {
                         .addOnSuccessListener {
                             val list = it.toObjects(Client::class.java)
                             if(list.count() > 0){
-                                CurrentClient.login(list.get(0))
+                                CurrentClient.login(list.get(0), it.first().id)
                                 Toast.makeText(activity, "Login successful : " + CurrentClient.user!!.username, Toast.LENGTH_LONG).show()
                                 startActivity(Intent(activity!!, MainActivity::class.java))
+                                activity!!.finish()
                             }
                             else{
                                 CurrentClient.loggedIn = false

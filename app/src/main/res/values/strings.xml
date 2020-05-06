@@ -28,10 +28,13 @@
     <!--    CardView Item-->
     <string name="cardView_address">City + Address</string>
     <string name="full_name">ListName + First Name</string>
-
+    //
     <string name="product_name">Product Name</string>
     <string name="price">Price</string>
-
+    //
+    <string name="prodNameQtt">Product Name x Qtt</string>
+    <string name="order_date">Order Date</string>
+    <string name="order_price">Price</string>
 
     <!--    SignUp-->
     <string name="last_name">Last Name</string>
@@ -53,9 +56,22 @@
     <!--    Toasts-->
     <string name="signup_add_client">Client Added</string>
 
-<!--    Titles-->
+<!--   ActionBar Titles-->
     <string name="your_orders">Your orders</string>
     <string name="your_wishlist">Your Wish list</string>
+
+<!--    Order Activity-->
+    <string name="product_name_order">Product Name :</string>
+    <string name="price_order">Price :</string>
+    <string name="goodie_type">Type :</string>
+    <string name="stock">Stock :</string>
+    <string name="description">Description :</string>
+    <string name="format">Format :</string>
+    <string name="doubleface">DoubleFace :</string>
+    <string name="qtt">Quantity :</string>
+    <string name="shipping_address">Shipping Address :</string>
+    <string name="total">Total</string>
+
 
 
 

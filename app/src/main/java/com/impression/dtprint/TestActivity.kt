@@ -16,8 +16,6 @@ class TestActivity : AppCompatActivity() {
 
     val collection = ConnectionDB.db.collection("Produits")
     var adapter: ProduitsAdapter? = null
-    var Gview: View? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,5 +39,6 @@ class TestActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
     }
-    }
+
+}
 

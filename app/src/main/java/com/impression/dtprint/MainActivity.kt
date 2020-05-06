@@ -25,6 +25,7 @@ import kotlinx.android.synthetic.main.fragment_signup.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    var orderIntent = Intent(this, OrderActivity::class.java)
     var drawer: DrawerLayout? = null
     var toolbar: Toolbar? = null
     var navigationView: NavigationView? = null
@@ -54,6 +55,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer!!.addDrawerListener(toggle)
         toggle.syncState()
 
+
         //Set Default Fragment
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
@@ -76,6 +78,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fragment_container, HomeFragment()).commit()
                     toolbar!!.title =  resources.getString(R.string.app_name)
+
                 }
 
                 R.id.draw_nav_gallery -> {
@@ -140,6 +143,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         if (drawer!!.isDrawerOpen(GravityCompat.START)) {
             drawer!!.closeDrawer(GravityCompat.START)
         }
+        else if (toolbar!!.title !== resources.getString(R.string.app_name)){
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, HomeFragment()).commit()
+            toolbar!!.title =  resources.getString(R.string.app_name)
+            navigationView!!.menu.getItem(0).setChecked(true)
+
+        }
         // Close the activity as default
         else {
             super.onBackPressed()
@@ -155,9 +165,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when(item.itemId){
             R.id.login_icon -> {
                 startActivity(Intent(this, LoginActivity::class.java))
+                finish()
             }
         }
         return super.onOptionsItemSelected(item)
     }
+
 
 }
