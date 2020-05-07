@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.impression.dtprint.MainActivity
+import com.impression.dtprint.OrderActivity
 import com.impression.dtprint.R
 import com.impression.dtprint.dao.ConnectionDB
 import com.impression.dtprint.models.Client
@@ -20,6 +21,9 @@ import models.User
 class LoginFragment : Fragment() {
 
     val clientsRef = ConnectionDB.db.collection("Client")
+    var prodId: String? = null
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view =  inflater.inflate(R.layout.fragment_login, container, false)
 
@@ -27,6 +31,12 @@ class LoginFragment : Fragment() {
         val passwordField = view.findViewById<EditText>(R.id.input_login_password)
 
         val btnLogin = view.findViewById<Button>(R.id.login_btn)
+
+        if(CurrentClient.aboutToOrder){
+            val bundle = activity!!.intent.extras
+            prodId = bundle!!.getString("ProdId")
+        }
+
 
 
 
@@ -49,7 +59,16 @@ class LoginFragment : Fragment() {
                             if(list.count() > 0){
                                 CurrentClient.login(list.get(0), it.first().id)
                                 Toast.makeText(activity, "Login successful : " + CurrentClient.user!!.username, Toast.LENGTH_LONG).show()
-                                startActivity(Intent(activity!!, MainActivity::class.java))
+                                var intent: Intent? = null
+                                if(CurrentClient.aboutToOrder){
+                                    intent = Intent(activity!!, OrderActivity::class.java)
+                                    intent!!.putExtra("ProdId", prodId)
+                                }
+                                else{
+                                    intent = Intent(activity!!, MainActivity::class.java)
+                                }
+
+                                startActivity(intent)
                                 activity!!.finish()
                             }
                             else{

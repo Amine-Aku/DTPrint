@@ -17,9 +17,12 @@ class LoginActivity : AppCompatActivity() {
 
     var pageAdapter: PagerAdapter? = null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+
 
         tabLayout = findViewById(R.id.tab_layout_login)
         loginTab = findViewById(R.id.tab_login)

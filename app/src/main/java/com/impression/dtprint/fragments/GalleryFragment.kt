@@ -10,9 +10,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
+import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.impression.dtprint.Adapters.GalleryAdapter
 import com.impression.dtprint.Adapters.ProduitsAdapter
+import com.impression.dtprint.LoginActivity
 import com.impression.dtprint.MainActivity
 import com.impression.dtprint.OrderActivity
 import com.impression.dtprint.R
@@ -23,8 +25,7 @@ import com.impression.dtprint.models.Produits
 class GalleryFragment() : Fragment(){
     val db = FirebaseFirestore.getInstance()
     val collection = db.collection("Produits")
-    val collectionWishlist = ConnectionDB.db.collection("Client")
-        .document(CurrentClient.id!!).collection("Wishlist")
+    var collectionWishlist: CollectionReference? = null
     var adapter: ProduitsAdapter? = null
     var adapterG: GalleryAdapter? = null
     var Gview:View? = null
@@ -33,7 +34,10 @@ class GalleryFragment() : Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         Gview = inflater.inflate(R.layout.fragment_gallery, container, false)
 
-
+        if(CurrentClient.loggedIn){
+            collectionWishlist = ConnectionDB.db.collection("Client")
+                .document(CurrentClient.id!!).collection("Wishlist")
+        }
 
 
 
@@ -48,20 +52,32 @@ class GalleryFragment() : Fragment(){
                  // Item View Btn Events Configuration
                  adapterG!!.setOnItemClickListener(object: GalleryAdapter.OnItemClickListener{
                      override fun onOrderClick(l: List<Produits>, position: Int) {
-                         val intent = Intent(activity!!, OrderActivity::class.java)
-                         intent.putExtra("ProdId", ""+l[position].id)
+                         var intent:Intent? = null
+                         CurrentClient.aboutToOrder = true
+                         if(!CurrentClient.loggedIn){
+                             intent = Intent(activity!!, LoginActivity::class.java)
+                         }
+                         else{
+                             intent = Intent(activity!!, OrderActivity::class.java)
+                         }
+                         intent!!.putExtra("ProdId", ""+l[position].id)
                          startActivity(intent)
                      }
 
                      override fun onWishlistClick(l: List<Produits>, position: Int) {
-                         collectionWishlist.document(l[position].nom).set(l[position])
-                             .addOnSuccessListener {
-                                 Toast.makeText(activity!!, "Added to your Wish list", Toast.LENGTH_SHORT).show()
-                             }
-                             .addOnFailureListener {
-                                 Toast.makeText(activity!!, "wishlist error", Toast.LENGTH_SHORT).show()
+                         if(CurrentClient.loggedIn){
+                             collectionWishlist!!.document(l[position].nom).set(l[position])
+                                 .addOnSuccessListener {
+                                     Toast.makeText(activity!!, "Added to your Wish list", Toast.LENGTH_SHORT).show()
+                                 }
+                                 .addOnFailureListener {
+                                     Toast.makeText(activity!!, "wishlist error", Toast.LENGTH_SHORT).show()
 
-                             }
+                                 }
+                         }
+                         else{
+                             Toast.makeText(activity!!, "You must Sign In", Toast.LENGTH_SHORT).show()
+                         }
 
                      }
 

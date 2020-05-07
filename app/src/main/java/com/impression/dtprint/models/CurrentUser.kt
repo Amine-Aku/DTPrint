@@ -7,6 +7,8 @@ object CurrentClient {
         var loggedIn: Boolean = false
         var id: String? = null
 
+        var aboutToOrder: Boolean = false
+
 
     fun login(client: Client, id: String){
         user = client

@@ -63,6 +63,8 @@ class OrderActivity : AppCompatActivity() {
         prodId = bundle!!.getString("ProdId")
         val id = prodId
 
+        CurrentClient.aboutToOrder = false
+
         if (prodId!![0] == '1') {
             prodtype = "Document"
         } else if (prodId!![0] == '2') {

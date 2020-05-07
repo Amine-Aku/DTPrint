@@ -165,7 +165,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when(item.itemId){
             R.id.login_icon -> {
                 startActivity(Intent(this, LoginActivity::class.java))
-                finish()
             }
         }
         return super.onOptionsItemSelected(item)
