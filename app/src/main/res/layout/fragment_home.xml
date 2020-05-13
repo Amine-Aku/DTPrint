@@ -10,20 +10,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Home Fragment"
+        android:text="@string/welcome"
         android:textSize="30sp" />
 
-    <Button
-        android:id="@+id/recycler_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Recyler" />
+<!--    <Button-->
+<!--        android:id="@+id/recycler_btn"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Recyler" />-->
 
 <!--    <Button-->
 <!--        android:id="@+id/recycler_btn2"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:text="Wishlist"-->
+<!--        android:text="Upload Test"-->
 <!--        android:layout_below="@id/recycler_btn"/>-->
 
 

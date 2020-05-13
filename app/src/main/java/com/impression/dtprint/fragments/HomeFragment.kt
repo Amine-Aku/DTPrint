@@ -20,6 +20,7 @@ import com.impression.dtprint.models.Produits
 
 class HomeFragment : Fragment() {
 
+    private val PICK_IMAGE_REQUEST = 1
     var text_area:TextView? = null
 
     val db = ConnectionDB.db
@@ -28,13 +29,19 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
 
-        val btn = view.findViewById<Button>(R.id.recycler_btn)
-        btn.setOnClickListener {
-            startActivity(Intent(context, TestActivity::class.java))
-        }
+//        val btn = view.findViewById<Button>(R.id.recycler_btn)
+//        btn.setOnClickListener {
+//            startActivity(Intent(context, TestActivity::class.java))
+//        }
+
+
 //        val btn2 = view.findViewById<Button>(R.id.recycler_btn2)
 //        btn2.setOnClickListener {
-//            startActivity(Intent(context, WishlistActivity::class.java))
+//
+//                val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+//                intent.setType("application/pdf")
+//                startActivityForResult(intent, 365)
+//
 //        }
 
 

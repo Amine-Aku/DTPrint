@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">DT.Print</string>
 
+
+    <string name="welcome">Welcome</string>
+
     <!--    Drawer Nav Select Menu-->
     <string name="draw_nav_home">Home</string>
     <string name="draw_nav_gallery">Gallery</string>
@@ -62,7 +65,7 @@
 
 <!--    Order Activity-->
     <string name="product_name_order">Product Name :</string>
-    <string name="price_order">Price :</string>
+    <string name="price_order">Price(DH) :</string>
     <string name="goodie_type">Type :</string>
     <string name="stock">Stock :</string>
     <string name="description">Description :</string>
@@ -70,7 +73,12 @@
     <string name="doubleface">DoubleFace :</string>
     <string name="qtt">Quantity :</string>
     <string name="shipping_address">Shipping Address :</string>
-    <string name="total">Total</string>
+    <string name="total">Total(DH):</string>
+    <string name="total_per_page">Total(DH/PAGE):</string>
+    <string name="open_file">Open File</string>
+    <string name="open_image">Open Image</string>
+    <string name="note">Note :</string>
+    <string name="add_credit_card">Credit Card :</string>
 
 
 

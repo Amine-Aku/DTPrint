@@ -48,7 +48,7 @@ class OrdersAdapter(options : FirestoreRecyclerOptions<Commande>)
             }
             prixView!!.text = "%.2f".format(commande.prixTotal).toString()+" DH"
             if(commande.dateCommande !==null){
-                dateView!!.text = commande!!.dateCommande
+                dateView!!.text = commande!!.dateCommande!!.trim()
             }
             else{
                 dateView!!.text = "not date yet"

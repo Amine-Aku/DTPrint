@@ -19,6 +19,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="15dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="200dp"
+            android:maxHeight="200dp"
             android:src="@drawable/ic_logo" />
 
         <!--        START-->
@@ -46,8 +49,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
                 android:textColor="@color/PrimaryText"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
         </LinearLayout>
         <!--  Price-->
         <LinearLayout
@@ -79,141 +81,195 @@
         </LinearLayout>
 
 
-<!--  Product  Details-->
-
-        <!--Format -->
+        <!--  Product  Details-->
+        <!--        Documents-->
         <LinearLayout
-            android:id="@+id/order_layout_format"
+            android:id="@+id/order_document_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="@string/format"
-                android:textColor="@color/colorAccentLight"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/order_view_format"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/PrimaryText"
-                android:textSize="20sp" />
-        </LinearLayout>
-        <!--DoubleFace-->
-        <LinearLayout
-            android:id="@+id/order_layout_doubleFace"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="@string/doubleface"
-                android:textColor="@color/colorAccentLight"
-                android:textSize="20sp" />
-
-
-            <CheckBox
-                android:id="@+id/order_checkBox_doubleFace"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/PrimaryText"
-                android:textSize="20sp" />
-        </LinearLayout>
-        <!--Type-->
-        <LinearLayout
-            android:id="@+id/order_layout_type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="@string/goodie_type"
-                android:textColor="@color/colorAccentLight"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/order_view_type"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/PrimaryText"
-                android:textSize="20sp" />
-        </LinearLayout>
-        <!--Stock-->
-        <LinearLayout
-            android:id="@+id/order_layout_stock"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="@string/stock"
-                android:textColor="@color/colorAccentLight"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/order_view_stock"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/PrimaryText"
-                android:textSize="20sp" />
-        </LinearLayout>
-        <!--Description-->
-        <LinearLayout
-            android:id="@+id/order_layout_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="15dp"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="@string/description"
-                android:textColor="@color/colorAccentLight"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/order_view_description"
+            <!--Format -->
+            <LinearLayout
+                android:id="@+id/order_layout_format"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/PrimaryText"
-                android:textSize="20sp" />
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/format"
+                    android:textColor="@color/colorAccentLight"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/order_view_format"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccentLight"
+                    android:textColor="@color/PrimaryText"
+                    android:textSize="20sp" />
+            </LinearLayout>
+            <!--DoubleFace-->
+            <LinearLayout
+                android:id="@+id/order_layout_doubleFace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/doubleface"
+                    android:textColor="@color/colorAccentLight"
+                    android:textSize="20sp" />
+
+
+                <CheckBox
+                    android:id="@+id/order_checkBox_doubleFace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccentLight"
+                    android:textColor="@color/PrimaryText"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--        Goodies-->
+        <LinearLayout
+            android:id="@+id/order_goodie_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Type-->
+            <LinearLayout
+                android:id="@+id/order_layout_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/goodie_type"
+                    android:textColor="@color/colorAccentLight"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/order_view_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccentLight"
+                    android:textColor="@color/PrimaryText"
+                    android:textSize="20sp" />
+            </LinearLayout>
+            <!--Stock-->
+            <LinearLayout
+                android:id="@+id/order_layout_stock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/stock"
+                    android:textColor="@color/colorAccentLight"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/order_view_stock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccentLight"
+                    android:textColor="@color/PrimaryText"
+                    android:textSize="20sp" />
+            </LinearLayout>
+            <!--Description-->
+            <LinearLayout
+                android:id="@+id/order_layout_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/description"
+                    android:textColor="@color/colorAccentLight"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/order_view_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccentLight"
+                    android:textColor="@color/PrimaryText"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+
         </LinearLayout>
 
-<!--    qtt -->
+
+        <!--        Upload BTN-->
+
+        <LinearLayout
+            android:id="@+id/order_layout_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/upload_btn_image"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/colorAccentLight"
+                android:text="@string/open_image"
+                android:textColor="@color/icons_text"
+                android:textSize="20sp"
+                android:layout_marginRight="10dp"/>
+
+            <Button
+                android:id="@+id/upload_btn_file"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/colorAccentLight"
+                android:text="@string/open_file"
+                android:textColor="@color/icons_text"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+
+
+        <!--    qtt -->
         <LinearLayout
             android:id="@+id/order_layout_qtt"
             android:layout_width="match_parent"
@@ -233,6 +289,34 @@
 
             <EditText
                 android:id="@+id/order_numPicker_qtt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccentLight"
+                android:inputType="number"
+                android:textColor="@color/PrimaryText"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <!--    Commentaire / Note-->
+        <LinearLayout
+            android:id="@+id/order_layout_note"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/note"
+                android:textColor="@color/colorAccentLight"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/order_view_note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
@@ -268,7 +352,6 @@
         </LinearLayout>
 
 
-
         <!--Prix Total-->
         <LinearLayout
             android:id="@+id/order_layout_total"
@@ -280,14 +363,15 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="150dp"
+                android:id="@+id/total_label"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="@string/total"
-                android:textStyle="bold"
                 android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="@string/total_per_page"
                 android:textColor="@color/colorAccentLight"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/order_view_total"
@@ -296,9 +380,45 @@
                 android:backgroundTint="@color/colorAccentLight"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
         </LinearLayout>
 
+        <!--        Credit Card-->
+        <!--        <LinearLayout-->
+        <!--            android:id="@+id/order_layout_credit_card"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginLeft="15dp"-->
+        <!--            android:layout_marginRight="15dp"-->
+        <!--            android:layout_marginBottom="15dp"-->
+        <!--            android:orientation="horizontal">-->
+
+        <!--            <TextView-->
+        <!--                android:layout_width="150dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_centerInParent="true"-->
+        <!--                android:layout_marginLeft="5dp"-->
+        <!--                android:backgroundTint="@color/colorAccentLight"-->
+        <!--                android:text="@string/price_order"-->
+        <!--                android:textColor="@color/colorAccentLight"-->
+        <!--                android:textSize="20sp" />-->
+
+        <!--            <EditText-->
+        <!--                android:id="@+id/order_view_credit_card"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:backgroundTint="@color/colorAccentLight"-->
+        <!--                android:textColor="@color/PrimaryText"-->
+        <!--                android:textSize="20sp"/>-->
+        <!--        </LinearLayout>-->
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp" />
 
         <Button
             android:id="@+id/order_activity_order_btn"
@@ -313,6 +433,7 @@
             android:textColor="@android:color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
+
 
         <!--        END-->
     </LinearLayout>
