@@ -25,7 +25,7 @@ import kotlinx.android.synthetic.main.fragment_signup.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    var orderIntent = Intent(this, OrderActivity::class.java)
+//    var orderIntent = Intent(this, OrderActivity::class.java)
     var drawer: DrawerLayout? = null
     var toolbar: Toolbar? = null
     var navigationView: NavigationView? = null

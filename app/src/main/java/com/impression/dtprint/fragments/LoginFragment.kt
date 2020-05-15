@@ -58,7 +58,7 @@ class LoginFragment : Fragment() {
                             val list = it.toObjects(Client::class.java)
                             if(list.count() > 0){
                                 CurrentClient.login(list.get(0), it.first().id)
-                                Toast.makeText(activity, "Login successful : " + CurrentClient.user!!.username, Toast.LENGTH_LONG).show()
+
                                 var intent: Intent? = null
                                 if(CurrentClient.aboutToOrder){
                                     intent = Intent(activity!!, OrderActivity::class.java)
@@ -69,6 +69,7 @@ class LoginFragment : Fragment() {
                                 }
 
                                 startActivity(intent)
+                                Toast.makeText(activity, "Login successful : " + CurrentClient.user!!.username, Toast.LENGTH_LONG).show()
                                 activity!!.finish()
                             }
                             else{
@@ -89,6 +90,8 @@ class LoginFragment : Fragment() {
 
         return view
     }
+
+
 
 
 }

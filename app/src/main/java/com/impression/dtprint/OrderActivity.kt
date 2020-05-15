@@ -226,6 +226,7 @@ class OrderActivity : AppCompatActivity() {
                             orderCollection.document().set(commande)
                             Toast.makeText(this, "Thank you !", Toast.LENGTH_SHORT).show()
                             // Backbutton method and refresh Main Activity
+                            startActivity(Intent(this, MainActivity::class.java))
                             finish()
                         }
                         .addOnFailureListener {
@@ -276,6 +277,7 @@ class OrderActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         // Backbutton method and refresh Main Activity
+        startActivity(Intent(this, MainActivity::class.java))
         finish()
     }
 }
