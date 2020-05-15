@@ -11,7 +11,7 @@
     <string name="draw_nav_orders">Orders</string>
     <string name="draw_nav_wishlist">Wishlist</string>
     <string name="draw_nav_shipping">Shipping</string>
-    <string name="draw_nav_clients">Clients</string>
+    <string name="draw_nav_contact">Contact us</string>
     <string name="draw_nav_login">Login</string>
     <string name="draw_nav_signUp">Sign Up</string>
     <string name="login">Login</string>
@@ -80,6 +80,10 @@
     <string name="note">Note :</string>
     <string name="add_credit_card">Credit Card :</string>
 
+<!--    Contact -->
+    <string name="email_address">dt.print@gmail.com</string>
+    <string name="tel">+2126XXXXXXXX</string>
+    <string name="local_address">xxX address Xxx</string>
 
 
 

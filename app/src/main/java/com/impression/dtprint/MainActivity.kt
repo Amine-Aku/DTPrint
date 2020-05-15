@@ -1,27 +1,17 @@
 package com.impression.dtprint
 
-import android.content.ClipData
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.view.menu.MenuView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import com.google.firebase.firestore.FirebaseFirestore
-import com.impression.dtprint.dao.DocumentsController
-import com.impression.dtprint.dao.GoodiesController
 import com.impression.dtprint.fragments.*
 import com.impression.dtprint.models.CurrentClient
-import io.realm.Realm
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_signup.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -109,10 +99,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     toolbar!!.title =  resources.getString(R.string.app_name)
                 }
 
-                R.id.draw_nav_clients -> {
+                R.id.draw_nav_contact -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, ClientsFragment()).commit()
-                    toolbar!!.title = resources.getString(R.string.draw_nav_clients)
+                        .replace(R.id.fragment_container, ContactFragment()).commit()
+                    toolbar!!.title = resources.getString(R.string.draw_nav_contact)
                 }
             }
         }
@@ -128,6 +118,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fragment_container, GalleryFragment()).commit()
                     toolbar!!.title = resources.getString(R.string.draw_nav_gallery)
+                }
+
+                R.id.draw_nav_contact -> {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, ContactFragment()).commit()
+                    toolbar!!.title = resources.getString(R.string.draw_nav_contact)
                 }
             }
         }
