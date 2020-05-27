@@ -36,10 +36,13 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/clients_username"
+                android:id="@+id/orders_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/username"
+                android:adjustViewBounds="true"
+                android:maxWidth="100dp"
+                android:gravity="center"
                 android:textAlignment="gravity"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="16sp" />
@@ -49,13 +52,13 @@
 
         <!--        2rd row-->
         <TextView
-            android:id="@+id/orders_orderDate"
+            android:id="@+id/orders_orderNum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:gravity="fill"
-            android:text="@string/order_date"
+            android:text="Num"
             android:textAlignment="gravity"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"

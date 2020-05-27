@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.impression.dtprint">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -25,14 +25,20 @@
         <activity
             android:name=".LoginActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".WishlistActivity"
+        <activity
+            android:name=".WishlistActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".OrdersActivity"
+        <activity
+            android:name=".OrdersActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".OrderActivity"
-            android:parentActivityName=".MainActivity"/>
-
+        <activity
+            android:name=".OrderActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".TestActivity" />
+
+        <activity
+            android:name=".OrderDetailActivity"
+            android:parentActivityName=".OrdersActivity" />
     </application>
 
 </manifest>

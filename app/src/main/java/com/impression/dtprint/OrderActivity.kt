@@ -16,9 +16,11 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabItem
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageTask
 import com.google.firebase.storage.UploadTask
+import com.google.firebase.storage.ktx.storage
 import com.impression.dtprint.Adapters.LoginTabAdapter
 import com.impression.dtprint.dao.ConnectionDB
 import com.impression.dtprint.models.*
@@ -76,7 +78,7 @@ class OrderActivity : AppCompatActivity() {
     val db = ConnectionDB.db
     val productCollection = db.collection("Produits")
     val orderCollection = db.collection("Commandes")
-    val storageRef = FirebaseStorage.getInstance().getReference("Commandes")
+    val storageRef = Firebase.storage("gs://dtprint-5c1da.appspot.com").reference
     var uploadTask: StorageTask<UploadTask.TaskSnapshot>? = null
 
     var prodtype: String? = null
@@ -151,21 +153,27 @@ class OrderActivity : AppCompatActivity() {
             }
 
 
-        if (shippingAddress == "") {
+        if (shippingAddressField!!.text.toString().trim() == "") {
             shippingAddress = CurrentClient.user!!.adresse
         }
 
 
         uploadImageBtn!!.setOnClickListener {
-            val intent = Intent(Intent.ACTION_GET_CONTENT)
-            intent.setType("image/*")
-            startActivityForResult(intent, PICK_IMAGE_REQUEST)
+            if(!confirm){
+                val intent = Intent(Intent.ACTION_GET_CONTENT)
+                intent.setType("image/*")
+                startActivityForResult(intent, PICK_IMAGE_REQUEST)
+                totalLabel!!.text = resources.getString(R.string.total)
+            }
         }
 
         uploadFileBtn!!.setOnClickListener {
-            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
-            intent.setType("application/pdf")
-            startActivityForResult(intent, PICK_File_REQUEST)
+            if(!confirm){
+                val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+                intent.setType("application/pdf")
+                startActivityForResult(intent, PICK_File_REQUEST)
+                totalLabel!!.text = resources.getString(R.string.total_per_page)
+            }
         }
 
         orderBtn!!.setOnClickListener {
@@ -197,6 +205,9 @@ class OrderActivity : AppCompatActivity() {
                     confirm = true
                     orderBtn!!.text = "Confirm"
 
+                uploadFileBtn!!.visibility = View.GONE
+                uploadImageBtn!!.visibility = View.GONE
+
             }
             else if(uploadTask != null && uploadTask!!.isInProgress){
                 Toast.makeText(this, "Another Upload is in Progress", Toast.LENGTH_SHORT).show()
@@ -205,37 +216,57 @@ class OrderActivity : AppCompatActivity() {
 
                 if(imageUri != null){
                     Toast.makeText(this, "Uploading ...", Toast.LENGTH_SHORT).show()
-                    val fileRef = storageRef.child( CurrentClient.user!!.username+"_"+
-                            System.currentTimeMillis().toString()+"."+getFileExtension(imageUri!!))
-                    uploadTask = fileRef.putFile(imageUri!!)
+                    orderCollection.get()
                         .addOnSuccessListener {
-                             uploadUrl = it.storage.downloadUrl.toString()
+                            var nextId: Int? = null
+                            if(it.isEmpty)  nextId = 1
+                            else nextId = it.last().id.toInt()+1
+                            val IDstr = "%04d".format(nextId)
 
-                            var commande = Commande(CurrentClient.user, qtt, shippingAddress, total, uploadUrl, note)
+                            val path = "Commandes/"+IDstr+"_"+CurrentClient.user!!.username+"_"+
+                                    System.currentTimeMillis().toString()+"."+getFileExtension(imageUri!!)
+                            val fileRef = storageRef.child(path)
 
-                            if (prodtype == "Document") {
-                                commande.document = documentSnapshot!!.toObject(Documents::class.java)
-                                commande.document!!.doubleFaces = doubleFaceField!!.isChecked
-                            } else if (prodtype == "Goodie") {
-                                commande.goodie = documentSnapshot!!.toObject(Goodies::class.java)
-                            }
 
-                            commande.dateCommande = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"))
-                                .toString()
 
-                            orderCollection.document().set(commande)
-                            Toast.makeText(this, "Thank you !", Toast.LENGTH_SHORT).show()
-                            // Backbutton method and refresh Main Activity
-                            startActivity(Intent(this, MainActivity::class.java))
-                            finish()
+                            uploadTask = fileRef.putFile(imageUri!!)
+                                .addOnSuccessListener {
+                                    uploadUrl = path
+
+                                    var commande = Commande(CurrentClient.user, qtt, shippingAddress, total, uploadUrl, note)
+
+                                    if (prodtype == "Document") {
+                                        commande.document = documentSnapshot!!.toObject(Documents::class.java)
+                                        commande.document!!.doubleFaces = doubleFaceField!!.isChecked
+                                    } else if (prodtype == "Goodie") {
+                                        commande.goodie = documentSnapshot!!.toObject(Goodies::class.java)
+                                    }
+
+                                    commande.dateCommande = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"))
+                                        .toString()
+                                    commande.numCommande = IDstr
+                                    orderCollection.document(IDstr).set(commande)
+
+                                    Toast.makeText(this, "Thank you !", Toast.LENGTH_SHORT).show()
+                                    // Backbutton method and refresh Main Activity
+                                    startActivity(Intent(this, MainActivity::class.java))
+                                    finish()
+                                }
+                                .addOnFailureListener {
+                                    Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
+                                }
+                                .addOnProgressListener {
+                                    val progress = (100.0 * it.bytesTransferred / it.totalByteCount)
+                                    progressBar!!.setProgress(progress.toInt())
+                                }
+
+
+
+
                         }
-                        .addOnFailureListener {
-                            Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
-                        }
-                        .addOnProgressListener {
-                            val progress = (100.0 * it.bytesTransferred / it.totalByteCount)
-                            progressBar!!.setProgress(progress.toInt())
-                        }
+
+
+
 
                 }
                 else{
@@ -263,6 +294,7 @@ class OrderActivity : AppCompatActivity() {
         if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK &&
             data != null && data.data != null ){
             imageUri = data.data
+
             order_product_image.setImageURI(imageUri)
             totalLabel!!.text = resources.getString(R.string.total)
         }

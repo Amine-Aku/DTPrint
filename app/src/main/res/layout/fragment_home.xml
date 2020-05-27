@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/bg">
 
 
@@ -12,6 +13,14 @@
         android:layout_centerInParent="true"
         android:text="@string/welcome"
         android:textSize="30sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_documents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_document"
+        android:layout_margin="5dp"
+        />
 
 <!--    <Button-->
 <!--        android:id="@+id/recycler_btn"-->

@@ -59,6 +59,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             navigationView!!.menu.removeItem(R.id.drawer_btns)
         }
 
+
+
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {

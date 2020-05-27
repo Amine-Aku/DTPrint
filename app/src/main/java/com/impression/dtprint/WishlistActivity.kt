@@ -2,6 +2,7 @@ package com.impression.dtprint
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -49,6 +50,7 @@ class WishlistActivity : AppCompatActivity() {
 
                 override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                     adapter!!.deleteWishlistItem(viewHolder.adapterPosition)
+                    Toast.makeText(this@WishlistActivity, "Item deleted", Toast.LENGTH_SHORT).show()
                 }
             }).attachToRecyclerView(recyclerView)
     }

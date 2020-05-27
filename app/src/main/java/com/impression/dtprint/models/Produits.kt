@@ -1,11 +1,11 @@
 package com.impression.dtprint.models
 
-public open class Produits() {
+open class Produits() {
 
     var id:Long
-    var nom: String = ""
+    var nom: String? = null
     var prix: Float = 0f
-    var type: String =""
+    var type: String? = null
 
     init {
         id = 0

@@ -21,22 +21,7 @@ object DocumentsController {
             }
         }
 
-        fun getAll(context: Context, firestoreCallback: FirestoreCallback){
-            var list: List<Produits> = emptyList()
-//            var text:String = "list : \n"
-            print("TEST 0")
-            collection.get()
-                .addOnSuccessListener {
-                    list = it.toObjects(Documents::class.java)
-                    firestoreCallback.onCallback(list)
-                    Toast.makeText(context,"Doc Loaded", Toast.LENGTH_SHORT).show()
-                  }
-                .addOnFailureListener {
-                    print("Loading Error !")
-                    Toast.makeText(context,"Error !", Toast.LENGTH_SHORT).show()
-                    print(it.message)
-                }
-        }
+
 
         fun getDocument(context: Context, id:Long):String{
             var text:String = "Doc : "

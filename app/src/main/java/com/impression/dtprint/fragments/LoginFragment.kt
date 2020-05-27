@@ -2,7 +2,6 @@ package com.impression.dtprint.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +15,6 @@ import com.impression.dtprint.R
 import com.impression.dtprint.dao.ConnectionDB
 import com.impression.dtprint.models.Client
 import com.impression.dtprint.models.CurrentClient
-import models.User
 
 class LoginFragment : Fragment() {
 

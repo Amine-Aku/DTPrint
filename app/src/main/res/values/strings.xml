@@ -59,11 +59,11 @@
     <!--    Toasts-->
     <string name="signup_add_client">Client Added</string>
 
-<!--   ActionBar Titles-->
+    <!--   ActionBar Titles-->
     <string name="your_orders">Your orders</string>
     <string name="your_wishlist">Your Wish list</string>
 
-<!--    Order Activity-->
+    <!--    Order Activity-->
     <string name="product_name_order">Product Name :</string>
     <string name="price_order">Price(DH) :</string>
     <string name="goodie_type">Type :</string>
@@ -80,11 +80,10 @@
     <string name="note">Note :</string>
     <string name="add_credit_card">Credit Card :</string>
 
-<!--    Contact -->
+    <!--    Contact -->
     <string name="email_address">dt.print@gmail.com</string>
     <string name="tel">+2126XXXXXXXX</string>
     <string name="local_address">xxX address Xxx</string>
-
 
 
 </resources>

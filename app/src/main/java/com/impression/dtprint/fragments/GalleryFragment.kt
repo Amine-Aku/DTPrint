@@ -66,7 +66,7 @@ class GalleryFragment() : Fragment(){
 
                      override fun onWishlistClick(l: List<Produits>, position: Int) {
                          if(CurrentClient.loggedIn){
-                             collectionWishlist!!.document(l[position].nom).set(l[position])
+                             collectionWishlist!!.document(l[position].nom!!).set(l[position])
                                  .addOnSuccessListener {
                                      Toast.makeText(activity!!, "Added to your Wish list", Toast.LENGTH_SHORT).show()
                                  }

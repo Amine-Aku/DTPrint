@@ -1,10 +1,5 @@
 package com.impression.dtprint.models
 
-import io.realm.RealmObject
-import io.realm.annotations.PrimaryKey
-import io.realm.annotations.RealmClass
-import models.User.UserType
-
 
 open class Client(){
 
@@ -37,6 +32,8 @@ open class Client(){
         this.numCarteBancaire = RIB
     }
 
-
+    enum class UserType {
+        Client,Agent,Livreur
+    }
 
 }

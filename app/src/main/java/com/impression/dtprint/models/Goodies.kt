@@ -1,7 +1,7 @@
 package com.impression.dtprint.models
 
 
-public class Goodies : Produits {
+class Goodies : Produits {
     var goodieType: String? = null
     var stock: Int = 0
     var description: String = ""

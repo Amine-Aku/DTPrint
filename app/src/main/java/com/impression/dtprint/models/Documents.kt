@@ -1,8 +1,6 @@
 package com.impression.dtprint.models
 
-import models.User
-
-public class Documents : Produits {
+ class Documents : Produits {
 
     var format: String = DocFormat.A4.toString()
     var doubleFaces: Boolean = false
