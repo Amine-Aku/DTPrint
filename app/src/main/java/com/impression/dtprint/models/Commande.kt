@@ -7,7 +7,6 @@ import com.google.type.Date
 class Commande() : Parcelable {
     var numCommande: String? = null
     var client: Client? = null
-//    var item: Item<T>? = null
 
     var document: Documents? = null
     var goodie: Goodies? = null
@@ -21,7 +20,9 @@ class Commande() : Parcelable {
     var url: String? = null
     var note: String? = null
     var prepared: Boolean = false
-    var delivred: Boolean = false
+    var delivered: Boolean = false
+    var pageCount = 1
+
 
     constructor(parcel: Parcel) : this() {
         qtt = parcel.readValue(Int::class.java.classLoader) as? Int
@@ -32,7 +33,7 @@ class Commande() : Parcelable {
         url = parcel.readString()
         note = parcel.readString()
         prepared = parcel.readByte() != 0.toByte()
-        delivred = parcel.readByte() != 0.toByte()
+        delivered = parcel.readByte() != 0.toByte()
     }
 
 
@@ -60,7 +61,7 @@ class Commande() : Parcelable {
         parcel.writeString(url)
         parcel.writeString(note)
         parcel.writeByte(if (prepared) 1 else 0)
-        parcel.writeByte(if (delivred) 1 else 0)
+        parcel.writeByte(if (delivered) 1 else 0)
     }
 
     override fun describeContents(): Int {

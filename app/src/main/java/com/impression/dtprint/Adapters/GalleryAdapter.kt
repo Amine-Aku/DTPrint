@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.DocumentSnapshot
@@ -13,6 +14,7 @@ import com.impression.dtprint.MainActivity
 import com.impression.dtprint.OrderActivity
 import com.impression.dtprint.R
 import com.impression.dtprint.fragments.GalleryFragment
+import com.impression.dtprint.models.ProductImages
 import com.impression.dtprint.models.Produits
 import kotlinx.android.synthetic.main.item_gallery.view.*
 
@@ -41,11 +43,22 @@ class GalleryAdapter(val context: Context, private val produits: List<Produits>)
     inner class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val orderBtn = itemView.findViewById<Button>(R.id.order_btn)
         val wishList = itemView.findViewById<Button>(R.id.wishlit_btn)
+        val image = itemView.findViewById<ImageView>(R.id.prod_img)
+
+
+
+
 
         fun SetData(produit: Produits, pos: Int){
             produit?.let {
                 itemView.nom_produit_gallery.text = produit.nom
                 itemView.prix_produit_gallery.text = "%.2f".format(produit.prix).toString()+" DH"
+                val id = produit.id-20
+                if(id>=0)
+                    image.setImageResource(ProductImages.id[(id).toInt()])
+                else
+                    image.setImageResource(R.drawable.p10)
+
             }
         }
 

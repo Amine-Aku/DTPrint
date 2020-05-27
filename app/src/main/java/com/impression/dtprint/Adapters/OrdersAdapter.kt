@@ -35,6 +35,7 @@ class OrdersAdapter(options : FirestoreRecyclerOptions<Commande>)
         var date: TextView? = null
 
         var detailBtn: ImageView? = null
+        var pageCountView: TextView? = null
 
 
         init {
@@ -43,6 +44,7 @@ class OrdersAdapter(options : FirestoreRecyclerOptions<Commande>)
             prixView = itemView.findViewById(R.id.orders_price)
             date = itemView.findViewById(R.id.orders_date)
             detailBtn = itemView.findViewById(R.id.orders_btn_more)
+            pageCountView = itemView.findViewById(R.id.orders_pagesCount)
 
             detailBtn!!.setOnClickListener {
                 val pos = adapterPosition
@@ -58,18 +60,30 @@ class OrdersAdapter(options : FirestoreRecyclerOptions<Commande>)
         fun setData(commande: Commande){
             if(commande.goodie !== null){
                 nomQttView!!.text = commande.goodie!!.nom+" x "+commande.qtt
+                pageCountView!!.visibility = View.GONE
             }
             else if(commande.document !== null){
                 nomQttView!!.text = commande.document!!.nom+" x "+commande.qtt
+                if(commande!!.prepared)
+                    pageCountView!!.text = "("+commande.pageCount+" pages)"
             }
             orderNumView!!.text = "N°: "+commande.numCommande
-            prixView!!.text = "%.2f".format(commande.prixTotal).toString()+" DH"
+
+            if(commande!!.prepared) {
+                prixView!!.text = "%.2f".format(commande.prixTotal!!*commande.pageCount).toString()+" DH"
+                orderNumView!!.text = "N°: "+commande.numCommande+"      Prepared"
+                if(commande!!.delivered){
+                    orderNumView!!.text = "N°: "+commande.numCommande+"      Delivered"
+                }
+            }
+            else{
+                prixView!!.text = "Order in process"
+            }
+
             if(commande.dateCommande !==null){
-//                dateView!!.text = commande!!.dateCommande!!.trim()
                 date!!.text = commande!!.dateCommande!!.trim()
             }
             else{
-//                dateView!!.text = "not date yet"
                 date!!.text = "not date yet"
             }
         }

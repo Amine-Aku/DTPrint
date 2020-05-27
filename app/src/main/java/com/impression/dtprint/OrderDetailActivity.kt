@@ -97,7 +97,7 @@ class OrderDetailActivity : AppCompatActivity() {
                     doubleFaceField!!.text = doc!!.doubleFaces.toString()
 //                    Toast.makeText(this, doc!!.toString(), Toast.LENGTH_LONG).show()
 
-                    totalLabel!!.text = resources.getString(R.string.total_per_page)
+//                    totalLabel!!.text = resources.getString(R.string.total)
 
                     val layout: LinearLayout = findViewById(R.id.order_detail_goodie_details)
                     layout.visibility = View.GONE
@@ -159,6 +159,10 @@ class OrderDetailActivity : AppCompatActivity() {
                 if(extension == "pdf") {
                     prodImage!!.setImageResource(R.drawable.ic_pdf)
                     totalLabel!!.text = resources.getString(R.string.total_per_page)
+                    if(order!!.prepared) {
+                        totalLabel!!.text = resources.getString(R.string.total)
+                        totalField!!.text = (order!!.prixTotal!!*order!!.pageCount).toString()
+                    }
                 }
                 else {
                     prodImage!!.setImageURI(uri)

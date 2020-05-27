@@ -226,9 +226,6 @@ class OrderActivity : AppCompatActivity() {
                             val path = "Commandes/"+IDstr+"_"+CurrentClient.user!!.username+"_"+
                                     System.currentTimeMillis().toString()+"."+getFileExtension(imageUri!!)
                             val fileRef = storageRef.child(path)
-
-
-
                             uploadTask = fileRef.putFile(imageUri!!)
                                 .addOnSuccessListener {
                                     uploadUrl = path

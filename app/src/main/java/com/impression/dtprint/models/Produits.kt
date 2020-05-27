@@ -1,5 +1,7 @@
 package com.impression.dtprint.models
 
+import com.impression.dtprint.R
+
 open class Produits() {
 
     var id:Long
@@ -37,5 +39,16 @@ open class Produits() {
 
 object ListProduits{
     var list: List<Produits> = ListDocuments.list + ListGoodies.list
+}
+
+object ProductImages{
+    val id = listOf<Int>(
+        R.drawable.p20,
+        R.drawable.p21,
+        R.drawable.p22,
+        R.drawable.p23,
+        R.drawable.p24,
+        R.drawable.p25
+    )
 }
 

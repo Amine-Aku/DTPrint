@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.impression.dtprint.Adapters.OrdersAdapter
 import com.impression.dtprint.dao.ConnectionDB
@@ -15,8 +16,11 @@ import com.impression.dtprint.models.CurrentClient
 
 class OrdersActivity : AppCompatActivity() {
 
-    val collection = ConnectionDB.db.collection("Commandes")
+//    val collection = ConnectionDB.db.collection("Commandes")
     var adapter: OrdersAdapter? = null
+
+    val db = FirebaseFirestore.getInstance()
+    val collection = db.collection("Commandes")
 
     val intentName = "order"
 
@@ -32,10 +36,12 @@ class OrdersActivity : AppCompatActivity() {
     private fun setUpRecyclerView() {
         val query = collection
             .whereEqualTo("client", CurrentClient.user)
+            .orderBy("delivered")
+            .orderBy("prepared")
             .orderBy("numCommande", Query.Direction.DESCENDING)
+
         val options = FirestoreRecyclerOptions.Builder<Commande>()
             .setQuery(query, Commande::class.java)
-            .setLifecycleOwner(this)
             .build()
 
         adapter = OrdersAdapter(options)
@@ -66,6 +72,16 @@ class OrdersActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         finish()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        adapter!!.startListening()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        adapter!!.stopListening()
     }
 
 }

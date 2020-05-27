@@ -6,11 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.impression.dtprint.R
+import com.impression.dtprint.models.ProductImages
 import com.impression.dtprint.models.Produits
 import kotlinx.android.synthetic.main.item_gallery.view.*
 
@@ -25,8 +27,7 @@ class WishlistAdapter(options : FirestoreRecyclerOptions<Produits>)
 
     override fun onBindViewHolder(holder: WishlistHolder, position: Int, model: Produits) {
            // holder.setData(model)
-        holder.nomView!!.text = model.nom
-        holder.prixView!!.text = "%.2f".format(model.prix).toString()+" DH"
+        holder.setData(model)
     }
 
     public fun deleteWishlistItem(position:Int){
@@ -38,6 +39,7 @@ class WishlistAdapter(options : FirestoreRecyclerOptions<Produits>)
         var nomView:TextView? = null
         var prixView:TextView? = null
         var wBtn: Button? = null
+        val image = itemView.findViewById<ImageView>(R.id.prod_img)
 
         init {
             nomView = itemView.findViewById(R.id.nom_produit_gallery)
@@ -49,7 +51,13 @@ class WishlistAdapter(options : FirestoreRecyclerOptions<Produits>)
 
         fun setData(produit: Produits){
             nomView!!.text = produit.nom
-            prixView!!.prix_produit_gallery.text = "%.2f".format(produit.prix).toString()+" DH"
+            prixView!!.text = "%.2f".format(produit.prix).toString()+" DH"
+
+            val id = produit.id-20
+            if(id>=0)
+                image.setImageResource(ProductImages.id[(id).toInt()])
+            else
+                image.setImageResource(R.drawable.p10)
         }
     }
 
