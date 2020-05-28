@@ -12,8 +12,8 @@ import com.impression.dtprint.R
 import com.impression.dtprint.models.Commande
 import com.impression.dtprint.models.Goodies
 
-class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
-    : FirestoreRecyclerAdapter<Commande, OrdersAgentAdapter.OrdersHolder>(options)
+class OrdersLivreurAdapter(options : FirestoreRecyclerOptions<Commande>)
+    : FirestoreRecyclerAdapter<Commande, OrdersLivreurAdapter.OrdersHolder>(options)
 {
     private var listener: OnItemClickListener? = null
 
@@ -36,7 +36,7 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
         var detailBtn: ImageView? = null
         var pageCountView: EditText? = null
         var pagesView: TextView? = null
-        var validate: CheckBox? = null
+        var delivered: CheckBox? = null
 
         var numTelView: TextView? = null
         var shippingAddressView: TextView? = null
@@ -49,8 +49,9 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
             date = itemView.findViewById(R.id.agent_orders_date)
             detailBtn = itemView.findViewById(R.id.agent_orders_btn_more)
             pageCountView = itemView.findViewById(R.id.agent_orders_pagesCount)
+            pageCountView!!.isEnabled = false
             pagesView = itemView.findViewById(R.id.agent_orders_pagesCount_pages)
-            validate = itemView.findViewById(R.id.agent_orders_validate)
+            delivered = itemView.findViewById(R.id.agent_orders_validate)
 
             shippingAddressView = itemView.findViewById(R.id.agent_orders_address)
             numTelView = itemView.findViewById(R.id.agent_orders_numTel)
@@ -61,21 +62,16 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
                     listener!!.onDetailClick(snapshots.getSnapshot(pos), pos)
                 }
             }
-
-
-
-            validate!!.setOnCheckedChangeListener { buttonView, isChecked ->
+            delivered!!.text = "Delivered"
+            delivered!!.setOnCheckedChangeListener { buttonView, isChecked ->
                 val pos = adapterPosition
                 if(pos != RecyclerView.NO_POSITION && listener != null){
                     var count: Int? = null
 
-                    if(!pageCountView!!.text.toString().trim().isEmpty())
-                         count = pageCountView!!.text.toString().trim().toInt()
-                    else
-                         count = 1
+//                    pageCountView!!.text.
 
 
-                    listener!!.onValidate(snapshots.getSnapshot(pos), pos, isChecked, count!!)
+                    listener!!.onValidate(snapshots.getSnapshot(pos), pos, isChecked)
                 }
             }
 
@@ -88,7 +84,7 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
                 nomQttView!!.text = commande.goodie!!.nom+" x "+commande.qtt
                 if(commande.goodie!!.goodieType == Goodies.GoodiesType.T_Shirt.toString())
                     pageCountView!!.setText(""+commande.pageCount)
-                else if(commande.goodie!!.goodieType !== Goodies.GoodiesType.T_Shirt.toString() && !commande!!.prepared){
+                else if(commande.goodie!!.goodieType !== Goodies.GoodiesType.T_Shirt.toString()){
                     pageCountView!!.visibility = View.GONE
                     pagesView!!.visibility = View.GONE
                 }
@@ -100,20 +96,14 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
             orderNumView!!.text = "N°: "+commande.numCommande + " => Client: "+commande.client!!.username
 
             
-            validate!!.isChecked = commande.prepared
+            delivered!!.isChecked = commande.delivered
 
 
             if(commande!!.prepared) {
                 prixView!!.text = "%.2f".format(commande.prixTotal!!*commande.pageCount).toString()+" DH"
-                pageCountView!!.isEnabled = false
             }
             else{
                 prixView!!.text = "Order in process"
-            }
-
-            if(commande!!.delivered){
-                validate!!.text = "Delivered"
-                validate!!.isEnabled = false
             }
 
             if(commande.dateCommande !==null){
@@ -133,7 +123,7 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
 
     public interface OnItemClickListener{
         fun onDetailClick(documentSnapshot: DocumentSnapshot, position: Int)
-        fun onValidate(documentSnapshot: DocumentSnapshot, position: Int, isChecked: Boolean, pageCount: Int = 1)
+        fun onValidate(documentSnapshot: DocumentSnapshot, position: Int, isChecked: Boolean)
 
     }
 

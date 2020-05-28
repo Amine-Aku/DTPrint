@@ -26,6 +26,7 @@ class HomeFragment : Fragment() {
 
     private val PICK_IMAGE_REQUEST = 1
     var agentBtn: Button? = null
+    var livreurBtn: Button? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.fragment_home, container, false)
@@ -39,14 +40,12 @@ class HomeFragment : Fragment() {
         }
 
 
-//        val btn2 = view.findViewById<Button>(R.id.recycler_btn2)
-//        btn2.setOnClickListener {
-//
-//                val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
-//                intent.setType("application/pdf")
-//                startActivityForResult(intent, 365)
-//
-//        }
+        livreurBtn = v.findViewById(R.id.goto_livreur_orders)
+        livreurBtn!!.setOnClickListener {
+            val intent = Intent(context, OrdersActivity::class.java)
+            intent.putExtra("user", Client.UserType.Livreur.toString())
+            startActivity(intent)
+        }
 
 
         return v

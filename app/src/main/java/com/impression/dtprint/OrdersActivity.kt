@@ -13,6 +13,7 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.SetOptions
 import com.impression.dtprint.Adapters.OrdersAdapter
 import com.impression.dtprint.agent.OrdersAgentAdapter
+import com.impression.dtprint.agent.OrdersLivreurAdapter
 import com.impression.dtprint.dao.ConnectionDB
 import com.impression.dtprint.models.Client
 import com.impression.dtprint.models.Commande
@@ -45,8 +46,12 @@ class OrdersActivity : AppCompatActivity() {
             recyclerView.adapter = setUpRecyclerView()
         }
         else if(intentUser == Client.UserType.Agent.toString()){
-            title = resources.getString((R.string.cardView_btn_order))
+            title = resources.getString((R.string.draw_nav_orders))+" (Agent)"
             recyclerView.adapter = setUpRecyclerViewAgent()
+        }
+        else if(intentUser == Client.UserType.Livreur.toString()){
+            title = resources.getString((R.string.draw_nav_orders))+" (Livreur)"
+            recyclerView.adapter = setUpRecyclerViewLivreur()
         }
 
 
@@ -116,10 +121,54 @@ class OrdersActivity : AppCompatActivity() {
             override fun onValidate(documentSnapshot: DocumentSnapshot, position: Int, isChecked: Boolean, pageCount: Int ) {
                 collection.document(documentSnapshot.id).update("prepared", isChecked, "pageCount", pageCount)
                     .addOnSuccessListener {
+                        if(isChecked)
                         Toast.makeText(this@OrdersActivity, "Order Validated", Toast.LENGTH_SHORT).show()
                     }
                     .addOnFailureListener {
                         Toast.makeText(this@OrdersActivity, "Validation Error", Toast.LENGTH_SHORT).show()
+                    }
+            }
+        })
+
+        return adapter!!
+    }
+
+    private fun setUpRecyclerViewLivreur(): OrdersLivreurAdapter {
+        val query = collection
+            .whereEqualTo("prepared", true)
+            .orderBy("delivered")
+            .orderBy("numCommande", Query.Direction.DESCENDING)
+
+        val options = FirestoreRecyclerOptions.Builder<Commande>()
+            .setQuery(query, Commande::class.java)
+            .setLifecycleOwner(this)
+            .build()
+
+        var adapter = OrdersLivreurAdapter(options)
+
+        adapter!!.setOnItemClickListener(object: OrdersLivreurAdapter.OnItemClickListener{
+            override fun onDetailClick(documentSnapshot: DocumentSnapshot, position: Int) {
+                val intent = Intent(this@OrdersActivity, OrderDetailActivity::class.java)
+                val order = documentSnapshot.toObject(Commande::class.java)
+                intent.putExtra("order", order)
+                intent.putExtra("client", order!!.client)
+                if(order!!.document != null){
+                    intent.putExtra("prodId", order.document!!.id.toString())
+                }
+                else if(order!!.goodie != null){
+                    intent.putExtra("prodId", order.goodie!!.id.toString())
+                }
+                startActivity(intent)
+            }
+
+            override fun onValidate(documentSnapshot: DocumentSnapshot, position: Int, isChecked: Boolean) {
+                collection.document(documentSnapshot.id).update("delivered", isChecked)
+                    .addOnSuccessListener {
+                        if(isChecked)
+                        Toast.makeText(this@OrdersActivity, "Order Delivered", Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener {
+                        Toast.makeText(this@OrdersActivity, "Deliveration Error", Toast.LENGTH_SHORT).show()
                     }
             }
         })
