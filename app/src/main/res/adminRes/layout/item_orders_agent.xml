@@ -6,7 +6,7 @@
     android:layout_marginLeft="5dp"
     android:layout_marginTop="5dp"
     android:layout_marginRight="5dp"
-    card_view:cardCornerRadius="8dp">
+    card_view:cardCornerRadius="15dp">
 
 
     <LinearLayout
@@ -17,6 +17,21 @@
         android:padding="5dp">
 
         <!--        First Row-->
+        <TextView
+            android:id="@+id/agent_orders_orderNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:gravity="fill"
+            android:text="Num + Client"
+            android:textAlignment="gravity"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <!--        2rd row-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,70 +39,54 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/orders_prodNameQtt"
+                    android:id="@+id/agent_orders_prodNameQtt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:gravity="fill"
                     android:text="@string/product_name"
                     android:textAlignment="gravity"
                     android:textColor="@color/colorPrimaryDark"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/orders_pagesCount"
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/agent_orders_pagesCount"
+                    android:layout_width="70dp"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/agent_orders_prodNameQtt"
                     android:layout_marginLeft="10dp"
-                    android:layout_below="@+id/orders_prodNameQtt"
-                    android:text="(pages)"
                     android:adjustViewBounds="true"
-                    android:maxWidth="100dp"
                     android:gravity="center"
+                    android:hint="(pages)"
+                    android:inputType="number"
+                    android:maxWidth="100dp"
                     android:textAlignment="gravity"
                     android:textColor="@android:color/darker_gray"
                     android:textSize="16sp" />
             </LinearLayout>
 
             <TextView
-                android:id="@+id/orders_date"
+                android:id="@+id/agent_orders_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/order_date"
                 android:adjustViewBounds="true"
-                android:maxWidth="100dp"
                 android:gravity="center"
+                android:maxWidth="100dp"
+                android:text="@string/order_date"
                 android:textAlignment="gravity"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="16sp" />
 
         </LinearLayout>
-
-
-
-
-        <!--        2rd row-->
-        <TextView
-            android:id="@+id/orders_orderNum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:gravity="fill"
-            android:text="Num"
-            android:textAlignment="gravity"
-            android:textColor="@color/colorPrimary"
-            android:textSize="18sp"
-            android:textStyle="bold" />
 
         <!--        3rd row-->
         <LinearLayout
@@ -97,7 +96,7 @@
 
 
             <TextView
-                android:id="@+id/orders_price"
+                android:id="@+id/agent_orders_price"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
@@ -109,9 +108,18 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
+            <CheckBox
+                android:id="@+id/agent_orders_validate"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:text="Validate"
+                android:textColor="@color/colorAccentLight"
+                android:textSize="16sp" />
+
 
             <ImageView
-                android:id="@+id/orders_btn_more"
+                android:id="@+id/agent_orders_btn_more"
                 android:layout_width="70dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"

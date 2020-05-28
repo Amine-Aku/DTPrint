@@ -28,9 +28,6 @@ object ClientController{
 
     }
 
-    fun getAll(){
-
-    }
 
 
 

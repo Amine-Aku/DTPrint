@@ -22,7 +22,7 @@ class ProfileFragment : Fragment() {
     var passwordField:TextView? = null
     var cityField:TextView? = null
     var adresseField:TextView? = null
-    var creditCardField:TextView? = null
+    var numTelField:TextView? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
        val v = inflater.inflate(R.layout.fragment_profile, container, false)
@@ -34,7 +34,7 @@ class ProfileFragment : Fragment() {
          passwordField = v.findViewById(R.id.profile_input_password)
          cityField = v.findViewById(R.id.profile_input_ville)
          adresseField = v.findViewById(R.id.profile_input_adresse)
-         creditCardField = v.findViewById(R.id.profile_input_credit_card)
+        numTelField = v.findViewById(R.id.profile_input_numTel)
 
         if(CurrentClient.loggedIn){
             populateTextViews(CurrentClient.user!!)
@@ -53,7 +53,6 @@ class ProfileFragment : Fragment() {
         passwordField!!.text = client.password
         cityField!!.text = client.ville
         adresseField!!.text = client.adresse
-        if(client.numCarteBancaire != null)
-            creditCardField!!.text = ""+client.numCarteBancaire
+        numTelField!!.text = client.numTel
     }
 }

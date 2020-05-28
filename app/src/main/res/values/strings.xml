@@ -46,7 +46,7 @@
     <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="city">City</string>
-    <string name="credit_card">Credit Card</string>
+    <string name="numTel">Telephone</string>
     <string name="address">Address</string>
 
 
@@ -84,6 +84,9 @@
     <string name="email_address">dt.print@gmail.com</string>
     <string name="tel">+2126XXXXXXXX</string>
     <string name="local_address">xxX address Xxx</string>
+
+
+<!--    AGENT-->
 
 
 </resources>

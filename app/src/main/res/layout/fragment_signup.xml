@@ -48,9 +48,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
+                android:maxLines="1"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="22sp"
-                />
+                android:textSize="22sp" />
         </LinearLayout>
         <!--Prenom-->
         <LinearLayout
@@ -77,6 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
+                android:maxLines="1"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="22sp" />
         </LinearLayout>
@@ -103,6 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
+                android:maxLines="1"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="22sp" />
         </LinearLayout>
@@ -129,6 +131,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
+                android:maxLines="1"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="22sp" />
+        </LinearLayout>
+        <!--Email-->
+        <LinearLayout
+            android:id="@+id/signUp_layout_numTel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/numTel"
+                android:textColor="@color/colorAccentLight"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/input_signUp_numTel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccentLight"
+                android:maxLines="1"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="22sp" />
         </LinearLayout>
@@ -155,6 +185,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
+                android:maxLines="1"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="22sp" />
         </LinearLayout>
@@ -181,6 +212,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorAccentLight"
+                android:maxLines="1"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="22sp" />
         </LinearLayout>
@@ -206,6 +238,7 @@
                 android:id="@+id/input_signUp_adresse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:backgroundTint="@color/colorAccentLight"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="22sp" />
