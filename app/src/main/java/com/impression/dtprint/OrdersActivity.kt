@@ -14,6 +14,7 @@ import com.google.firebase.firestore.SetOptions
 import com.impression.dtprint.Adapters.OrdersAdapter
 import com.impression.dtprint.agent.OrdersAgentAdapter
 import com.impression.dtprint.dao.ConnectionDB
+import com.impression.dtprint.models.Client
 import com.impression.dtprint.models.Commande
 import com.impression.dtprint.models.CurrentClient
 
@@ -25,7 +26,7 @@ class OrdersActivity : AppCompatActivity() {
     val db = FirebaseFirestore.getInstance()
     val collection = db.collection("Commandes")
 
-    val intentName = "order"
+    var intentUser: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,11 +36,20 @@ class OrdersActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        intent?.let{
+            intentUser = it.extras!!.getString("user")
+        }
 
-        title = resources.getString((R.string.your_orders))
+        if( intentUser == Client.UserType.Client.toString() ){
+            title = resources.getString((R.string.your_orders))
+            recyclerView.adapter = setUpRecyclerView()
+        }
+        else if(intentUser == Client.UserType.Agent.toString()){
+            title = resources.getString((R.string.cardView_btn_order))
+            recyclerView.adapter = setUpRecyclerViewAgent()
+        }
 
-//        recyclerView.adapter = setUpRecyclerView()
-        recyclerView.adapter = setUpRecyclerViewAgent()
+
 
     }
     private fun setUpRecyclerView(): OrdersAdapter{
@@ -61,6 +71,7 @@ class OrdersActivity : AppCompatActivity() {
                 val intent = Intent(this@OrdersActivity, OrderDetailActivity::class.java)
                 val order = documentSnapshot.toObject(Commande::class.java)
                 intent.putExtra("order", order)
+                intent.putExtra("client", order!!.client)
                 if(order!!.document != null){
                     intent.putExtra("prodId", order.document!!.id.toString())
                 }
@@ -76,8 +87,6 @@ class OrdersActivity : AppCompatActivity() {
 
     private fun setUpRecyclerViewAgent(): OrdersAgentAdapter {
         val query = collection
-                //Change INDEX Here !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            .whereEqualTo("client", CurrentClient.user)
             .orderBy("delivered")
             .orderBy("prepared")
             .orderBy("numCommande", Query.Direction.DESCENDING)
@@ -94,6 +103,7 @@ class OrdersActivity : AppCompatActivity() {
                 val intent = Intent(this@OrdersActivity, OrderDetailActivity::class.java)
                 val order = documentSnapshot.toObject(Commande::class.java)
                 intent.putExtra("order", order)
+                intent.putExtra("client", order!!.client)
                 if(order!!.document != null){
                     intent.putExtra("prodId", order.document!!.id.toString())
                 }

@@ -35,7 +35,11 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
 
         var detailBtn: ImageView? = null
         var pageCountView: EditText? = null
+        var pagesView: TextView? = null
         var validate: CheckBox? = null
+
+        var numTelView: TextView? = null
+        var shippingAddressView: TextView? = null
 
 
         init {
@@ -45,7 +49,11 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
             date = itemView.findViewById(R.id.agent_orders_date)
             detailBtn = itemView.findViewById(R.id.agent_orders_btn_more)
             pageCountView = itemView.findViewById(R.id.agent_orders_pagesCount)
+            pagesView = itemView.findViewById(R.id.agent_orders_pagesCount_pages)
             validate = itemView.findViewById(R.id.agent_orders_validate)
+
+            shippingAddressView = itemView.findViewById(R.id.agent_orders_address)
+            numTelView = itemView.findViewById(R.id.agent_orders_numTel)
 
             detailBtn!!.setOnClickListener {
                 val pos = adapterPosition
@@ -58,6 +66,7 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
                 val pos = adapterPosition
                 if(pos != RecyclerView.NO_POSITION && listener != null){
                     var count: Int? = null
+
                     if(!pageCountView!!.text.toString().trim().isEmpty())
                          count = pageCountView!!.text.toString().trim().toInt()
                     else
@@ -77,8 +86,9 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
                 nomQttView!!.text = commande.goodie!!.nom+" x "+commande.qtt
                 if(commande.goodie!!.goodieType == Goodies.GoodiesType.T_Shirt.toString())
                     pageCountView!!.setText(""+commande.pageCount)
-                else{
+                else if(commande.goodie!!.goodieType !== Goodies.GoodiesType.T_Shirt.toString()){
                     pageCountView!!.visibility = View.GONE
+                    pagesView!!.visibility = View.GONE
                 }
             }
             else if(commande.document !== null){
@@ -105,6 +115,8 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
                 date!!.text = "not date yet"
             }
 
+            shippingAddressView!!.text = itemView.resources.getString(R.string.address)+" : "+commande.adresseLivraison
+            numTelView!!.text = commande.client!!.numTel
 
         }
 

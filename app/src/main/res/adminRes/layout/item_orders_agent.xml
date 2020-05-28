@@ -17,38 +17,41 @@
         android:padding="5dp">
 
         <!--        First Row-->
-        <TextView
-            android:id="@+id/agent_orders_orderNum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:gravity="fill"
-            android:text="Num + Client"
-            android:textAlignment="gravity"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20sp"
-            android:textStyle="bold" />
 
+<!--        2rd row-->
 
-        <!--        2rd row-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <!--  1st column-->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
+                <!-- numCommande-->
+                <TextView
+                    android:id="@+id/agent_orders_orderNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:gravity="fill"
+                    android:text="Num + Client"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <!--Produit * qtt -->
                 <TextView
                     android:id="@+id/agent_orders_prodNameQtt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:gravity="fill"
@@ -57,6 +60,55 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/agent_orders_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:gravity="fill"
+                    android:text="@string/shipping_address"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/PrimaryText"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/agent_orders_numTel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:gravity="fill"
+                    android:text="@string/numTel"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/PrimaryText"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+
+            </LinearLayout>
+            <!-- 2nd Column-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/agent_orders_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:gravity="center"
+                    android:maxWidth="100dp"
+                    android:text="@string/order_date"
+                    android:textAlignment="gravity"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/agent_orders_pagesCount"
@@ -70,21 +122,24 @@
                     android:inputType="number"
                     android:maxWidth="100dp"
                     android:textAlignment="gravity"
-                    android:textColor="@android:color/darker_gray"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/agent_orders_pagesCount_pages"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/agent_orders_prodNameQtt"
+                    android:layout_marginLeft="10dp"
+                    android:adjustViewBounds="true"
+                    android:gravity="center"
+                    android:text="Pages"
+                    android:inputType="number"
+                    android:maxWidth="100dp"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="16sp" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/agent_orders_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:gravity="center"
-                android:maxWidth="100dp"
-                android:text="@string/order_date"
-                android:textAlignment="gravity"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="16sp" />
 
         </LinearLayout>
 

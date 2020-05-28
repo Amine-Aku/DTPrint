@@ -23,8 +23,9 @@ class Commande() : Parcelable {
     var delivered: Boolean = false
     var pageCount = 1
 
-
     constructor(parcel: Parcel) : this() {
+        numCommande = parcel.readString()
+        client = parcel.readParcelable(Client::class.java.classLoader)
         qtt = parcel.readValue(Int::class.java.classLoader) as? Int
         dateCommande = parcel.readString()
         dateLivraison = parcel.readString()
@@ -34,6 +35,7 @@ class Commande() : Parcelable {
         note = parcel.readString()
         prepared = parcel.readByte() != 0.toByte()
         delivered = parcel.readByte() != 0.toByte()
+        pageCount = parcel.readInt()
     }
 
 
@@ -46,13 +48,9 @@ class Commande() : Parcelable {
         this.note = note
     }
 
-
-
-
-//    init {
-//        require(prixTotal!! > 0)
-//    }
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(numCommande)
+        parcel.writeParcelable(client, flags)
         parcel.writeValue(qtt)
         parcel.writeString(dateCommande)
         parcel.writeString(dateLivraison)
@@ -62,6 +60,7 @@ class Commande() : Parcelable {
         parcel.writeString(note)
         parcel.writeByte(if (prepared) 1 else 0)
         parcel.writeByte(if (delivered) 1 else 0)
+        parcel.writeInt(pageCount)
     }
 
     override fun describeContents(): Int {

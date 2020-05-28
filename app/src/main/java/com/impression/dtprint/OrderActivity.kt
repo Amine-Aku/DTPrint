@@ -85,6 +85,7 @@ class OrderActivity : AppCompatActivity() {
     var documentSnapshot: DocumentSnapshot? = null
 
     var confirm = false
+    var fileLoaded = false
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -164,6 +165,7 @@ class OrderActivity : AppCompatActivity() {
                 intent.setType("image/*")
                 startActivityForResult(intent, PICK_IMAGE_REQUEST)
                 totalLabel!!.text = resources.getString(R.string.total)
+                fileLoaded = true
             }
         }
 
@@ -173,11 +175,12 @@ class OrderActivity : AppCompatActivity() {
                 intent.setType("application/pdf")
                 startActivityForResult(intent, PICK_File_REQUEST)
                 totalLabel!!.text = resources.getString(R.string.total_per_page)
+                fileLoaded = true
             }
         }
 
         orderBtn!!.setOnClickListener {
-            if(!confirm){
+            if(!confirm && fileLoaded){
                 prodName = prodNameField!!.text.toString()
                 price = priceField!!.text.toString().toFloat()
                 if (prodtype == "Document") {
@@ -190,7 +193,10 @@ class OrderActivity : AppCompatActivity() {
                 }
 
                 qtt = qttField!!.text.toString().trim().toInt()
-                shippingAddress = shippingAddressField!!.text.toString().trim()
+                if(shippingAddressField!!.text.toString().trim() == "")
+                    shippingAddress = CurrentClient.user!!.adresse
+                else
+                    shippingAddress = shippingAddressField!!.text.toString().trim()
                 note = noteField!!.text.toString().trim()
 
                 // Calculate the Total
@@ -245,6 +251,7 @@ class OrderActivity : AppCompatActivity() {
                                     orderCollection.document(IDstr).set(commande)
 
                                     Toast.makeText(this, "Thank you !", Toast.LENGTH_SHORT).show()
+                                    fileLoaded = false
                                     // Backbutton method and refresh Main Activity
                                     startActivity(Intent(this, MainActivity::class.java))
                                     finish()

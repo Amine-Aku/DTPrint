@@ -11,6 +11,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.impression.dtprint.fragments.*
+import com.impression.dtprint.models.Client
 import com.impression.dtprint.models.CurrentClient
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -86,7 +87,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 }
 
                 R.id.draw_nav_orders -> {
-                    startActivity(Intent(this, OrdersActivity::class.java))
+                    val intent = Intent(this, OrdersActivity::class.java)
+                    intent.putExtra("user", Client.UserType.Client.toString())
+                    startActivity(intent)
                 }
 
                 R.id.draw_nav_wishlist -> {
