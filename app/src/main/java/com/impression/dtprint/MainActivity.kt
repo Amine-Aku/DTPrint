@@ -9,10 +9,13 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.navigation.NavigationView
 import com.impression.dtprint.fragments.*
 import com.impression.dtprint.models.Client
 import com.impression.dtprint.models.CurrentClient
+import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -26,18 +29,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-
         //Set Toolbar as the Action Bar
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-
         //Set The Drawer
         drawer = findViewById(R.id.main_layout)
         navigationView = findViewById(R.id.draw_nav_view)
         navigationView!!.setNavigationItemSelectedListener(this)
-
         var toggle = ActionBarDrawerToggle(
             this, drawer, toolbar,
             R.string.navigation_drawer_open, R.string.navigation_drawer_close

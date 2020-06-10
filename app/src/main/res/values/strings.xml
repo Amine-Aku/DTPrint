@@ -86,7 +86,8 @@
     <string name="local_address">xxX address Xxx</string>
 
 
-<!--    AGENT-->
+<!--    HOME -->
+    <string name="logo"> Documents or Things We will print all your dreams</string>
 
 
 </resources>
