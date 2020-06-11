@@ -107,6 +107,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                         .replace(R.id.fragment_container, ContactFragment()).commit()
                     toolbar!!.title = resources.getString(R.string.draw_nav_contact)
                 }
+
+                R.id.draw_nav_orders_agent -> {
+                    val intent = Intent(this, OrdersActivity::class.java)
+                    intent.putExtra("user", Client.UserType.Agent.toString())
+                    startActivity(intent)
+                }
+
+                R.id.draw_nav_orders_livreur -> {
+                    val intent = Intent(this, OrdersActivity::class.java)
+                    intent.putExtra("user", Client.UserType.Livreur.toString())
+                    startActivity(intent)
+                }
             }
         }
         else{
@@ -127,6 +139,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fragment_container, ContactFragment()).commit()
                     toolbar!!.title = resources.getString(R.string.draw_nav_contact)
+                }
+
+                R.id.draw_nav_orders_agent -> {
+                    val intent = Intent(this, OrdersActivity::class.java)
+                    intent.putExtra("user", Client.UserType.Agent.toString())
+                    startActivity(intent)
+                }
+
+                R.id.draw_nav_orders_livreur -> {
+                    val intent = Intent(this, OrdersActivity::class.java)
+                    intent.putExtra("user", Client.UserType.Livreur.toString())
+                    startActivity(intent)
                 }
             }
         }

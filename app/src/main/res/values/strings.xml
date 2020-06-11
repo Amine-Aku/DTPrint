@@ -87,8 +87,11 @@
 
 
 <!--    HOME -->
-    <string name="logo"> Documents or Things </string>
-    <string name="commerce">DT.PRINT make your dreams real </string>
+    <string name="logo">Documents or Things</string>
+    <string name="commerce">DT.PRINT makes your dreams real</string>
+
+    <string name="orders_agent">Agent</string>
+    <string name="orders_livreur">Livreur</string>
 
 
 </resources>

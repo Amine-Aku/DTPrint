@@ -49,31 +49,31 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/goto_agent_orders"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:autoSizeMaxTextSize="20sp"
-            android:background="@color/colorAccentLight"
-            android:text="Agent"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+<!--        <Button-->
+<!--            android:id="@+id/goto_agent_orders"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:autoSizeMaxTextSize="20sp"-->
+<!--            android:background="@color/colorAccentLight"-->
+<!--            android:text="Agent"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:textStyle="bold" />-->
 
-        <Button
-            android:id="@+id/goto_livreur_orders"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:layout_weight="1"
-            android:autoSizeMaxTextSize="20sp"
-            android:background="@color/colorAccentLight"
-            android:text="Livreur"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+<!--        <Button-->
+<!--            android:id="@+id/goto_livreur_orders"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_margin="5dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:autoSizeMaxTextSize="20sp"-->
+<!--            android:background="@color/colorAccentLight"-->
+<!--            android:text="Livreur"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:textStyle="bold" />-->
 
 
     </LinearLayout>

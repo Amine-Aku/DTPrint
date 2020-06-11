@@ -89,22 +89,19 @@ class HomeFragment : Fragment() {
 
 
 
-        agentBtn = v.findViewById(R.id.goto_agent_orders)
-        agentBtn!!.setOnClickListener {
-            val intent = Intent(context, OrdersActivity::class.java)
-            intent.putExtra("user", Client.UserType.Agent.toString())
-            startActivity(intent)
-        }
-
-
-
-
-        livreurBtn = v.findViewById(R.id.goto_livreur_orders)
-        livreurBtn!!.setOnClickListener {
-            val intent = Intent(context, OrdersActivity::class.java)
-            intent.putExtra("user", Client.UserType.Livreur.toString())
-            startActivity(intent)
-        }
+//        agentBtn = v.findViewById(R.id.goto_agent_orders)
+//        agentBtn!!.setOnClickListener {
+//            val intent = Intent(context, OrdersActivity::class.java)
+//            intent.putExtra("user", Client.UserType.Agent.toString())
+//            startActivity(intent)
+//        }
+//
+//        livreurBtn = v.findViewById(R.id.goto_livreur_orders)
+//        livreurBtn!!.setOnClickListener {
+//            val intent = Intent(context, OrdersActivity::class.java)
+//            intent.putExtra("user", Client.UserType.Livreur.toString())
+//            startActivity(intent)
+//        }
 
         return v
     }

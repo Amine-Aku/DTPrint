@@ -39,4 +39,18 @@
                 android:title="@string/logout" />
         </menu>
     </item>
+
+    <item android:title="Validation"
+        android:id="@+id/drawer_btns_validation">
+        <menu>
+            <item
+                android:id="@+id/draw_nav_orders_agent"
+                android:icon="@drawable/ic_orders"
+                android:title="@string/orders_agent" />
+            <item
+                android:id="@+id/draw_nav_orders_livreur"
+                android:icon="@drawable/ic_orders"
+                android:title="@string/orders_livreur" />
+        </menu>
+    </item>
 </menu>
