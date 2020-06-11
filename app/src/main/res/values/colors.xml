@@ -22,4 +22,6 @@
 
     <color name="bg_top">#f0f9fe</color>
     <color name="bg_bottom">#97d8f6</color>
+    <color name="startbg">#CCD6DAF7</color>
+    <color name="endbg">#CC3D51DC</color>
 </resources>

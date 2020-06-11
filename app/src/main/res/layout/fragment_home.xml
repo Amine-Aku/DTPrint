@@ -5,15 +5,33 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg"
     >
-
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/logo"
-        android:textSize="26dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="7dp"
         android:gravity="center"
-        android:textStyle="bold"
-        android:background="@color/bg_bottom" />
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/logo"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:textStyle="bold"
+
+            android:textColor="@color/PrimaryText"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/commerce"
+            android:gravity="center"
+            />
+
+
+    </LinearLayout>
+
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPagerImageSlider"

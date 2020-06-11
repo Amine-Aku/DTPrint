@@ -35,6 +35,12 @@ class HomeFragment : Fragment() {
     var livreurBtn: Button? = null
     private lateinit var viewPager2: ViewPager2
     private  val sliderHandler:Handler = Handler()
+    private var sliderRunnable =
+        java.lang.Runnable {
+            viewPager2.currentItem=viewPager2.currentItem+1
+
+
+        }
 
 
 
@@ -102,7 +108,21 @@ class HomeFragment : Fragment() {
 
         return v
     }
-    private var sliderRunnable =
-        java.lang.Runnable {
-            viewPager2.setCurrentItem(viewPager2.currentItem++,true) }
+
+
+    override fun onPause() {
+        super.onPause()
+        sliderHandler.removeCallbacks(sliderRunnable)
+    }
+
+
+
+    override fun onResume() {
+        super.onResume()
+        sliderHandler.postDelayed(sliderRunnable,2000)
+
+    }
 }
+/*
+*
+* */
