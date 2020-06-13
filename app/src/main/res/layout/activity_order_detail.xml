@@ -40,14 +40,14 @@
                 android:gravity="end"
                 android:text="N°"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/order_detail_view_numCommande"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
+                android:backgroundTint="@color/SecondaryText"
                 android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -66,14 +66,14 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="Client :"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/order_detail_view_client"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
+                android:backgroundTint="@color/SecondaryText"
                 android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -92,14 +92,14 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="@string/product_name_order"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/order_detail_view_product_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
+                android:backgroundTint="@color/SecondaryText"
                 android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -118,16 +118,16 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="5dp"
-                android:backgroundTint="@color/colorAccentLight"
+                android:backgroundTint="@color/PrimaryText"
                 android:text="@string/price_order"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/order_detail_view_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
+                android:backgroundTint="@color/SecondaryText"
                 android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -155,14 +155,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:text="@string/format"
-                    android:textColor="@color/colorAccentLight"
+                    android:textColor="@color/PrimaryText"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/order_detail_view_format"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/colorAccentLight"
+                    android:backgroundTint="@color/SecondaryText"
                     android:textColor="@color/PrimaryText"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -181,7 +181,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:text="@string/doubleface"
-                    android:textColor="@color/colorAccentLight"
+                    android:textColor="@color/PrimaryText"
                     android:textSize="20sp" />
 
 
@@ -189,7 +189,7 @@
                     android:id="@+id/order_detail_doubleFace"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/colorAccentLight"
+                    android:backgroundTint="@color/SecondaryText"
                     android:textColor="@color/PrimaryText"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -216,14 +216,14 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:text="@string/goodie_type"
-                    android:textColor="@color/colorAccentLight"
+                    android:textColor="@color/PrimaryText"
                     android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/order_detail_view_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/colorAccentLight"
+                    android:backgroundTint="@color/SecondaryText"
                     android:textColor="@color/PrimaryText"
                     android:textSize="20sp" />
             </LinearLayout>
@@ -247,14 +247,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="@string/qtt"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/order_detail_numPicker_qtt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
+                android:backgroundTint="@color/SecondaryText"
                 android:inputType="number"
                 android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
@@ -275,14 +275,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="@string/note"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/order_detail_view_note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
+                android:backgroundTint="@color/SecondaryText"
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textColor="@color/PrimaryText"
@@ -304,14 +304,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="@string/numTel"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/order_detail_view_tel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
+                android:backgroundTint="@color/SecondaryText"
                 android:inputType="text"
                 android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
@@ -332,14 +332,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="@string/shipping_address"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/order_detail_view_shipping_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
+                android:backgroundTint="@color/SecondaryText"
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textColor="@color/PrimaryText"
@@ -365,7 +365,7 @@
                 android:layout_marginLeft="5dp"
                 android:textAlignment="center"
                 android:text="@string/total_per_page"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
@@ -374,8 +374,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="7dp"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
+                android:backgroundTint="@color/SecondaryText"
+                android:textColor="@color/PrimaryText"
                 android:textAlignment="center"
                 android:textSize="22sp"
                 android:textStyle="bold"

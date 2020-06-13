@@ -40,15 +40,15 @@
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="5dp"
                 android:text="@string/last_name"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/profile_input_nom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
+                android:backgroundTint="@color/SecondaryText"
+                android:textColor="@color/SecondaryText"
                 android:textSize="22sp"
                 />
         </LinearLayout>
@@ -67,17 +67,17 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="5dp"
-                android:backgroundTint="@color/colorAccentLight"
+                android:backgroundTint="@color/PrimaryText"
                 android:text="@string/first_name"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/profile_input_prenom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
+                android:backgroundTint="@color/SecondaryText"
+                android:textColor="@color/SecondaryText"
                 android:textSize="22sp" />
         </LinearLayout>
         <!--Username-->
@@ -95,15 +95,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="Username"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/profile_input_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
+                android:backgroundTint="@color/SecondaryText"
+                android:textColor="@color/SecondaryText"
                 android:textSize="22sp" />
         </LinearLayout>
         <!--Email-->
@@ -121,15 +121,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="Email"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/profile_input_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
+                android:backgroundTint="@color/SecondaryText"
+                android:textColor="@color/SecondaryText"
                 android:textSize="22sp" />
         </LinearLayout>
         <!--Password-->
@@ -147,15 +147,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="@string/password"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/profile_input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
+                android:backgroundTint="@color/SecondaryText"
+                android:textColor="@color/SecondaryText"
                 android:textSize="22sp" />
         </LinearLayout>
         <!--Ville-->
@@ -173,15 +173,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="@string/city"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/profile_input_ville"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
+                android:backgroundTint="@color/SecondaryText"
+                android:textColor="@color/SecondaryText"
                 android:textSize="22sp" />
         </LinearLayout>
         <!--Address-->
@@ -199,7 +199,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="@string/address"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="22sp" />
 
             <TextView
@@ -207,8 +207,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
+                android:backgroundTint="@color/SecondaryText"
+                android:textColor="@color/SecondaryText"
                 android:textSize="22sp" />
         </LinearLayout>
 <!--      Telephone-->
@@ -226,15 +226,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="@string/numTel"
-                android:textColor="@color/colorAccentLight"
+                android:textColor="@color/PrimaryText"
                 android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/profile_input_numTel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccentLight"
-                android:textColor="@color/colorPrimaryDark"
+                android:backgroundTint="@color/SecondaryText"
+                android:textColor="@color/SecondaryText"
                 android:textSize="22sp" />
         </LinearLayout>
 
