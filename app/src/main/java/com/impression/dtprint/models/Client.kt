@@ -6,7 +6,6 @@ import android.os.Parcelable
 
 open class Client() : Parcelable {
 
-
     var username:String ?= ""
     var password:String ?=""
     var type: String? = ""

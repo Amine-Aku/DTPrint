@@ -101,15 +101,7 @@
             </LinearLayout>
 
         </LinearLayout>
-        <!--        <ImageView-->
-        <!--            android:id="@+id/imgShare"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="match_parent"-->
-        <!--            android:layout_gravity="center"-->
-        <!--            android:src="@drawable/ic_gallery"-->
-        <!--            android:tint="@color/colorAccentLight" />-->
-
-
+        
         <!--        END  -->
     </LinearLayout>
 

@@ -80,7 +80,7 @@
 
             <TextView
                 android:id="@+id/order_view_product_name"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/SecondaryText"
                 android:textColor="@color/PrimaryText"
@@ -429,10 +429,10 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="40dp"
-            android:background="@color/colorPrimary"
+            android:background="@color/icons_text"
             android:gravity="center"
             android:text="@string/cardView_btn_order"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorAccent"
             android:textSize="24sp"
             android:textStyle="bold" />
 

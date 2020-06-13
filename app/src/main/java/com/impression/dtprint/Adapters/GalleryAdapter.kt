@@ -25,9 +25,6 @@ class GalleryAdapter(val context: Context, private val produits: List<Produits>)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_gallery, parent, false)
-
-
-
         return MyViewHolder(view)
     }
 
@@ -44,10 +41,6 @@ class GalleryAdapter(val context: Context, private val produits: List<Produits>)
         val orderBtn = itemView.findViewById<Button>(R.id.order_btn)
         val wishList = itemView.findViewById<Button>(R.id.wishlit_btn)
         val image = itemView.findViewById<ImageView>(R.id.prod_img)
-
-
-
-
 
         fun SetData(produit: Produits, pos: Int){
             produit?.let {
