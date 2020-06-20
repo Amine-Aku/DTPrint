@@ -134,7 +134,7 @@ class OrderDetailActivity : AppCompatActivity() {
         var file = File.createTempFile("uploads","jpg")
         fileRef!!.getFile(file)
             .addOnSuccessListener {
-                Toast.makeText(this, "File Loaded!", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this, "File Loaded!", Toast.LENGTH_SHORT).show()
                 val uri = Uri.fromFile(file)
                 val extension =  order!!.url!!.substring(order!!.url!!.lastIndexOf('.')+1)
                 if(extension == "pdf") {

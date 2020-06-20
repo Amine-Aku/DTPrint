@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">DT.Print</string>
-
-
     <string name="welcome">Welcome</string>
 
     <!--    Drawer Nav Select Menu-->

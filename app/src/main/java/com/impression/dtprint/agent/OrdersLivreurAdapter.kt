@@ -63,7 +63,7 @@ class OrdersLivreurAdapter(options : FirestoreRecyclerOptions<Commande>)
                 }
             }
             delivered!!.text = "Delivered"
-            delivered!!.setOnCheckedChangeListener { buttonView, isChecked ->
+            delivered!!.setOnClickListener {
                 val pos = adapterPosition
                 if(pos != RecyclerView.NO_POSITION && listener != null){
                     var count: Int? = null
@@ -71,7 +71,7 @@ class OrdersLivreurAdapter(options : FirestoreRecyclerOptions<Commande>)
 //                    pageCountView!!.text.
 
 
-                    listener!!.onValidate(snapshots.getSnapshot(pos), pos, isChecked)
+                    listener!!.onValidate(snapshots.getSnapshot(pos), pos, delivered!!.isChecked)
                 }
             }
 
