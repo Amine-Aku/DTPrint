@@ -94,7 +94,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="Username"
+                android:text="@string/username"
                 android:textColor="@color/PrimaryText"
                 android:textSize="22sp" />
 
@@ -120,7 +120,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="Email"
+                android:text="@string/email"
                 android:textColor="@color/PrimaryText"
                 android:textSize="22sp" />
 
@@ -132,8 +132,8 @@
                 android:textColor="@color/SecondaryText"
                 android:textSize="22sp" />
         </LinearLayout>
-        <!--Password-->
-        <LinearLayout
+        <!--Password
+         <LinearLayout
             android:id="@+id/profile_layout_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -157,7 +157,8 @@
                 android:backgroundTint="@color/SecondaryText"
                 android:textColor="@color/SecondaryText"
                 android:textSize="22sp" />
-        </LinearLayout>
+        </LinearLayout>-->
+
         <!--Ville-->
         <LinearLayout
             android:id="@+id/profile_layout_ville"
@@ -227,7 +228,7 @@
                 android:layout_marginLeft="5dp"
                 android:text="@string/numTel"
                 android:textColor="@color/PrimaryText"
-                android:textSize="22sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/profile_input_numTel"

@@ -76,9 +76,7 @@ class OrdersAdapter(options : FirestoreRecyclerOptions<Commande>)
                     orderNumView!!.text = "N°: "+commande.numCommande+"      Delivered"
                 }
             }
-            else{
-                prixView!!.text = "Order in process"
-            }
+            else prixView!!.text = "Order in process"
 
             if(commande.dateCommande !==null){
                 date!!.text = commande!!.dateCommande!!.trim()

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DT.Print</string>
+    <string name="app_name" translatable="false">DT.Print</string>
 
 
     <string name="welcome">Welcome</string>
@@ -19,18 +19,18 @@
 
 
     <!--    /Drawer Nav Toggle Option-->
-    <string name="navigation_drawer_open">Open Navigation Drawer</string>
-    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string name="navigation_drawer_open" translatable="false">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close Navigation Drawer</string>
 
     <!--    CardView Gallery-->
     <string name="cardView_btn_order">Order</string>
-    <string name="cardView_btn_wishlist">Wishlist</string>
-    <string name="cardView_btn_more">More</string>
+    <string name="cardView_btn_wishlist">Add to Wishlist</string>
+    <string name="cardView_btn_more" translatable="false">More</string>
 
 
     <!--    CardView Item-->
     <string name="cardView_address">City + Address</string>
-    <string name="full_name">ListName + First Name</string>
+    <string name="full_name">LastName + First Name</string>
     //
     <string name="product_name">Product Name</string>
     <string name="price">Price</string>
@@ -46,7 +46,7 @@
     <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="city">City</string>
-    <string name="numTel">Telephone</string>
+    <string name="numTel">Phone</string>
     <string name="address">Address</string>
 
 
@@ -70,7 +70,7 @@
     <string name="stock">Stock :</string>
     <string name="description">Description :</string>
     <string name="format">Format :</string>
-    <string name="doubleface">DoubleFace :</string>
+    <string name="doubleface">Double sided  :</string>
     <string name="qtt">Quantity :</string>
     <string name="shipping_address">Shipping Address :</string>
     <string name="total">Total(DH):</string>
@@ -81,17 +81,17 @@
     <string name="add_credit_card">Credit Card :</string>
 
     <!--    Contact -->
-    <string name="email_address">dt.print@gmail.com</string>
-    <string name="tel">+2126XXXXXXXX</string>
-    <string name="local_address">xxX address Xxx</string>
+    <string name="email_address" translatable="false">dt.print@gmail.com</string>
+    <string name="tel" translatable="false">+2126XXXXXXXX</string>
+    <string name="local_address" translatable="false">xxX address Xxx</string>
 
 
 <!--    HOME -->
-    <string name="logo">Documents or Things</string>
-    <string name="commerce">DT.PRINT makes your dreams real</string>
+    <string name="logo" translatable="false">Documents or Things</string>
+    <string name="commerce" translatable="false">DT.PRINT makes your dreams real</string>
 
+    <string name="orders_livreur">"Delivery man "</string>
     <string name="orders_agent">Agent</string>
-    <string name="orders_livreur">Livreur</string>
 
 
 </resources>
