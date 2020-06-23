@@ -55,10 +55,6 @@
     <!--    Search Bar-->
     <string name="search_hint">Search</string>
 
-
-    <!--    Toasts-->
-    <string name="signup_add_client">Client Added</string>
-
     <!--   ActionBar Titles-->
     <string name="your_orders">Your orders</string>
     <string name="your_wishlist">Your Wish list</string>
@@ -92,6 +88,14 @@
 
     <string name="orders_livreur">"Delivery man "</string>
     <string name="orders_agent">Agent</string>
+    <string name="order_in_process">Order in process</string>
+    <string name="Order_Delivered">Order Delivered</string>
+    <string name="Deliveration_Error">Deliveration Error</string>
+    <string name="already_logged_in" translatable="false">Already logged in</string>
+    <string name="signup_add_client">Client Added</string>
+    <string name="Added_to_your_Wishlist" translatable="false">Added to your Wish list</string>
+    <string name="wishlist_error" translatable="false">wishlist error</string>
+    <string name="You_must_SignIn" translatable="false">You must Sign In</string>
 
 
 </resources>

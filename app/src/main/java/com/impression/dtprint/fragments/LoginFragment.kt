@@ -43,7 +43,7 @@ class LoginFragment : Fragment() {
             val password = passwordField.text.toString()
 
             if (CurrentClient.loggedIn){
-                Toast.makeText(activity, "Already logged in", Toast.LENGTH_LONG).show()
+                Toast.makeText(activity, getString(R.string.already_logged_in), Toast.LENGTH_LONG).show()
             }
             else if(username.trim() == "" && password.trim() == ""){
                 Toast.makeText(activity, "Error : Empty Field", Toast.LENGTH_LONG).show()

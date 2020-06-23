@@ -8,12 +8,57 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:718434435285:android:2605ca23438bb1c404e25c",
+        "android_client_info": {
+          "package_name": "com.example.admindtprint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718434435285-h3b11cfo8kv1rlhegk3pi9lvkoblq9ab.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.admindtprint",
+            "certificate_hash": "f1ad957c0dbc17e46ecc1b091272b416831f7611"
+          }
+        },
+        {
+          "client_id": "718434435285-6g90alebhcmr33diat7v3vst28h4pke2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI4gRN9j2nsHRkQVoEWu9--cO9dJ5VhsA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718434435285-6g90alebhcmr33diat7v3vst28h4pke2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:718434435285:android:45102944de0f8ba604e25c",
         "android_client_info": {
           "package_name": "com.impression.dtprint"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "718434435285-ukaigv5f8861hcs6pjjjed5q33c4govu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.impression.dtprint",
+            "certificate_hash": "f1ad957c0dbc17e46ecc1b091272b416831f7611"
+          }
+        },
         {
           "client_id": "718434435285-9ia4gj0mh1i6jhisppv24qnpgdpvmc23.apps.googleusercontent.com",
           "client_type": 1,

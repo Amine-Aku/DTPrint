@@ -51,4 +51,7 @@
     <string name="order_date">Bestelldatum</string>
     <string name="address">Anschrift</string>
     <string name="full_name">Nachname + Vorname</string>
+    <string name="order_in_process">Bestellung in Bearbeitung</string>
+    <string name="Order_Delivered">"Bestellung geliefert "</string>
+    <string name="Deliveration_Error">"Übermittlungsfehler "</string>
 </resources>

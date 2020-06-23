@@ -51,4 +51,7 @@
     <string name="add_credit_card">Carte banquaire:</string>
     <string name="orders_livreur">Livreur</string>
     <string name="orders_agent">Agent</string>
+    <string name="order_in_process">"Commande en cours de traitement  "</string>
+    <string name="Order_Delivered">Commande livrée</string>
+    <string name="Deliveration_Error">"Erreur de livraison "</string>
 </resources>

@@ -28,19 +28,17 @@ class GalleryAdapter(val context: Context, private val produits: List<Produits>)
         return MyViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return produits.size
-    }
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val produit = produits[position]
         holder.SetData(produit, position)
     }
-
+    override fun getItemCount(): Int {
+        return produits.size
+    }
     inner class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val orderBtn = itemView.findViewById<Button>(R.id.order_btn)
-        val wishList = itemView.findViewById<Button>(R.id.wishlit_btn)
-        val image = itemView.findViewById<ImageView>(R.id.prod_img)
+        val orderBtn = itemView.order_btn
+        val wishList = itemView.wishlit_btn
+        val image = itemView.prod_img
 
         fun SetData(produit: Produits, pos: Int){
             produit?.let {

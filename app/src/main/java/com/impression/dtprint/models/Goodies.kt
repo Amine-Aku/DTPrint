@@ -1,6 +1,5 @@
 package com.impression.dtprint.models
 
-
 class Goodies : Produits {
     var goodieType: String? = null
     var stock: Int = 0

@@ -68,15 +68,15 @@ class GalleryFragment() : Fragment(){
                          if(CurrentClient.loggedIn){
                              collectionWishlist!!.document(l[position].nom!!).set(l[position])
                                  .addOnSuccessListener {
-                                     Toast.makeText(activity!!, "Added to your Wish list", Toast.LENGTH_SHORT).show()
+                                     Toast.makeText(activity!!, getString(R.string.Added_to_your_Wishlist), Toast.LENGTH_SHORT).show()
                                  }
                                  .addOnFailureListener {
-                                     Toast.makeText(activity!!, "wishlist error", Toast.LENGTH_SHORT).show()
+                                     Toast.makeText(activity!!, getString(R.string.wishlist_error), Toast.LENGTH_SHORT).show()
 
                                  }
                          }
                          else{
-                             Toast.makeText(activity!!, "You must Sign In", Toast.LENGTH_SHORT).show()
+                             Toast.makeText(activity!!, getString(R.string.You_must_SignIn), Toast.LENGTH_SHORT).show()
                          }
 
                      }

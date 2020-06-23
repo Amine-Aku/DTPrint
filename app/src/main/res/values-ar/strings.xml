@@ -51,4 +51,7 @@
     <string name="add_credit_card">بطاقة الائتمان</string>
     <string name="orders_livreur">رجل التوصيل</string>
     <string name="orders_agent">عامل</string>
+    <string name="order_in_process">"الطلب قيد المعالجة "</string>
+    <string name="Order_Delivered">"تم تسليم الطلب "</string>
+    <string name="Deliveration_Error">مشكل في التوصيل</string>
 </resources>

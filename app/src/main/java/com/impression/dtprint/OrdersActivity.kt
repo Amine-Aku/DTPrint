@@ -165,10 +165,10 @@ class OrdersActivity : AppCompatActivity() {
                 collection.document(documentSnapshot.id).update("delivered", isChecked)
                     .addOnSuccessListener {
                         if(isChecked)
-                        Toast.makeText(this@OrdersActivity, "Order Delivered", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@OrdersActivity, resources.getText(R.string.Order_Delivered), Toast.LENGTH_SHORT).show()
                     }
                     .addOnFailureListener {
-                        Toast.makeText(this@OrdersActivity, "Deliveration Error", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@OrdersActivity,resources.getText(R.string.Deliveration_Error), Toast.LENGTH_SHORT).show()
                     }
             }
         })

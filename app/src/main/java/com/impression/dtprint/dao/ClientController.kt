@@ -2,6 +2,7 @@ package com.impression.dtprint.dao
 import android.content.Context
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
+import com.impression.dtprint.R
 import com.impression.dtprint.models.Client
 import io.realm.Realm
 import io.realm.RealmConfiguration
@@ -18,7 +19,7 @@ object ClientController{
     fun addClient(context: Context, client: Client){
         collection.document().set(client)
             .addOnSuccessListener {
-                Toast.makeText(context, "Client Added", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,context.getString(R.string.signup_add_client), Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener {
                 println("Error !")
@@ -29,8 +30,5 @@ object ClientController{
     }
 
 
-
-
-
-    }
+}
 

@@ -64,7 +64,7 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
 
 
 
-            validate!!.setOnCheckedChangeListener { buttonView, isChecked ->
+            validate!!.setOnClickListener {
                 val pos = adapterPosition
                 if(pos != RecyclerView.NO_POSITION && listener != null){
                     var count: Int? = null
@@ -75,7 +75,7 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
                          count = 1
 
 
-                    listener!!.onValidate(snapshots.getSnapshot(pos), pos, isChecked, count!!)
+                    listener!!.onValidate(snapshots.getSnapshot(pos), pos, validate!!.isChecked, count!!)
                 }
             }
 
@@ -101,20 +101,26 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
 
             
             validate!!.isChecked = commande.prepared
+            validate!!.isEnabled = !(commande.prepared && commande.delivered)
 
 
-            if(commande!!.prepared) {
+
+            if(commande.prepared) {
                 prixView!!.text = "%.2f".format(commande.prixTotal!!*commande.pageCount).toString()+" DH"
                 pageCountView!!.isEnabled = false
+
+                if(commande.delivered && commande.prepared){
+                    prixView!!.text = "%.2f".format(commande.prixTotal!!*commande.pageCount).toString()+" DH" +
+                            "   (DELIVERED)"
+//                    validate!!.isEnabled = false
+                }
+
             }
             else{
-                prixView!!.text = "Order in process"
+                prixView!!.text = itemView.resources.getString(R.string.order_in_process)
             }
 
-            if(commande!!.delivered){
-                validate!!.text = "Delivered"
-                validate!!.isEnabled = false
-            }
+
 
             if(commande.dateCommande !==null){
                 date!!.text = commande!!.dateCommande!!.trim()
@@ -125,6 +131,8 @@ class OrdersAgentAdapter(options : FirestoreRecyclerOptions<Commande>)
 
             shippingAddressView!!.text = itemView.resources.getString(R.string.address)+" : "+commande.adresseLivraison
             numTelView!!.text = commande.client!!.numTel
+
+
 
         }
 

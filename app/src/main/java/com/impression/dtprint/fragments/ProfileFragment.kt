@@ -19,7 +19,6 @@ class ProfileFragment : Fragment() {
     var prenomField:TextView? = null
     var usernameField:TextView? = null
     var emailField:TextView? = null
-    var passwordField:TextView? = null
     var cityField:TextView? = null
     var adresseField:TextView? = null
     var numTelField:TextView? = null
@@ -31,7 +30,6 @@ class ProfileFragment : Fragment() {
          prenomField = v.findViewById(R.id.profile_input_prenom)
          usernameField = v.findViewById(R.id.profile_input_username)
          emailField = v.findViewById(R.id.profile_input_email)
-         passwordField = v.findViewById(R.id.profile_input_password)
          cityField = v.findViewById(R.id.profile_input_ville)
          adresseField = v.findViewById(R.id.profile_input_adresse)
         numTelField = v.findViewById(R.id.profile_input_numTel)
@@ -50,7 +48,6 @@ class ProfileFragment : Fragment() {
         prenomField!!.text = client.prenom
         usernameField!!.text = client.username
         emailField!!.text = client.email
-        passwordField!!.text = client.password
         cityField!!.text = client.ville
         adresseField!!.text = client.adresse
         numTelField!!.text = client.numTel
